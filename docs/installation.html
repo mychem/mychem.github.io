@@ -40,7 +40,7 @@
           <div class="body" role="main">
             
   <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<h1>Installation</h1>
 <p>In this chapter, we will discuss the steps necessary to compile and
 install Mychem.</p>
 <ul class="simple">
@@ -54,18 +54,18 @@ all the steps of compilation and installation of the application.</li>
 Mychem.</li>
 </ul>
 <div class="section" id="how-to-obtain-mychem">
-<h2>How to Obtain Mychem<a class="headerlink" href="#how-to-obtain-mychem" title="Permalink to this headline">¶</a></h2>
+<h2>How to Obtain Mychem</h2>
 <p>At this time, Mychem is only available as a source package that you need
 to compile. You can also get the last snapshot directly from the GIT
 repository (take care, this version can be unstable). It is planned to
 release binaries in a future release of Mychem.</p>
 <div class="section" id="source-package">
-<h3>Source Package<a class="headerlink" href="#source-package" title="Permalink to this headline">¶</a></h3>
+<h3>Source Package</h3>
 <p>The last source package can be found on the <a class="reference external" href="http://sourceforge.net/projects/mychem/files/">Project Homepage</a>
 hosted by SourceForge.</p>
 </div>
 <div class="section" id="git-repository">
-<h3>GIT Repository<a class="headerlink" href="#git-repository" title="Permalink to this headline">¶</a></h3>
+<h3>GIT Repository</h3>
 <p>The last development version of Mychem can be obtained by cloning the
 <a class="reference external" href="http://github.com/mychem/mychem-code">GIT repository</a>. In case you
 are using a command line interface, follow this step:</p>
@@ -75,7 +75,7 @@ are using a command line interface, follow this step:</p>
 </div>
 </div>
 <div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<h2>Requirements</h2>
 <p>In order to successfully compile and install Mychem, you need the
 following programs and libraries.</p>
 <ul>
@@ -103,15 +103,15 @@ libopenbabel-dev package.</p>
 </ul>
 </div>
 <div class="section" id="compilation-and-installation">
-<h2>Compilation and Installation<a class="headerlink" href="#compilation-and-installation" title="Permalink to this headline">¶</a></h2>
+<h2>Compilation and Installation</h2>
 <p>This section describes the compilation of Mychem’s source files for
 GNU/Linux, Mac OS X and Microsoft Windows.</p>
 <div class="section" id="compiling-and-installing-mychem-on-gnu-linux">
-<h3>Compiling and Installing Mychem on GNU/Linux<a class="headerlink" href="#compiling-and-installing-mychem-on-gnu-linux" title="Permalink to this headline">¶</a></h3>
+<h3>Compiling and Installing Mychem on GNU/Linux</h3>
 <p>This section contains the compilation and installation instructions for
 Mychem on GNU/Linux.</p>
 <div class="section" id="standard-installation-on-gnu-linux">
-<h4>Standard Installation on GNU/Linux<a class="headerlink" href="#standard-installation-on-gnu-linux" title="Permalink to this headline">¶</a></h4>
+<h4>Standard Installation on GNU/Linux</h4>
 <p>This section describes the standard way to compile and install Mychem on
 GNU/Linux. You have to check that the header files for the MySQL library
 and the Open Babel library are installed on your workstation. If they
@@ -173,7 +173,7 @@ following command:</p>
 corresponding OS section.</p>
 </div>
 <div class="section" id="customized-installation">
-<h4>Customized Installation<a class="headerlink" href="#customized-installation" title="Permalink to this headline">¶</a></h4>
+<h4>Customized Installation</h4>
 <p>You can customized the build and installation process by modifying CMake
 arguments. For example, if you want to change the path of the
 installation directory:</p>
@@ -188,14 +188,14 @@ following option for the <code class="docutils literal"><span class="pre">make</
 </div>
 </div>
 <div class="section" id="ubuntu-specifities">
-<h4>Ubuntu specifities<a class="headerlink" href="#ubuntu-specifities" title="Permalink to this headline">¶</a></h4>
+<h4>Ubuntu specifities</h4>
 <p>AppArmor is a Linux Security Module and is installed by default on
 Ubuntu. It permits to confine individual programs to a set of listed
 files. To configure correctly AppArmor for Mychem, please follow the
 instructions detailed in the <a class="reference internal" href="troubleshooting.html#apparmor"><span class="std std-ref">AppArmor</span></a> section.</p>
 </div>
 <div class="section" id="testing-the-installation">
-<h4>Testing the installation<a class="headerlink" href="#testing-the-installation" title="Permalink to this headline">¶</a></h4>
+<h4>Testing the installation</h4>
 <p>Since v0.5, Mychem includes a test suite. To build and use these
 programs, you have to set the MySQL connection settings and run the
 tests. The following example builds Mychem out-of-source and enables
@@ -257,7 +257,7 @@ It can be found in the <code class="docutils literal"><span class="pre">/path/to
 directory.</p>
 </div>
 <div class="section" id="installation-troubleshooting">
-<h4>Installation Troubleshooting<a class="headerlink" href="#installation-troubleshooting" title="Permalink to this headline">¶</a></h4>
+<h4>Installation Troubleshooting</h4>
 <p>Building your application can raise some errors:</p>
 <ul>
 <li><p class="first">If CMake returns the following error:</p>
@@ -279,7 +279,7 @@ $ cmake -DOPENBABEL2_INCLUDE_DIR<span class="o">=</span>/path/to/openbabel/inclu
 </div>
 </div>
 <div class="section" id="installing-mychem-on-mac-os-x">
-<h3>Installing Mychem on Mac OS X<a class="headerlink" href="#installing-mychem-on-mac-os-x" title="Permalink to this headline">¶</a></h3>
+<h3>Installing Mychem on Mac OS X</h3>
 <p>The installation on Mac OS X differs slightly from an installation on
 GNU/linux. First, you have to set some parameters for CMake. The
 following list shows common values used when compiling Mychem on Mac OS
@@ -352,11 +352,11 @@ $ sudo install_name_tool -change libmysqlclient.18.dylib <span class="se">\</spa
 </div>
 </div>
 <div class="section" id="installing-mychem-on-microsoft-windows">
-<h3>Installing Mychem on Microsoft Windows<a class="headerlink" href="#installing-mychem-on-microsoft-windows" title="Permalink to this headline">¶</a></h3>
+<h3>Installing Mychem on Microsoft Windows</h3>
 <p>This section describes contains the installation of Mychem on Microsoft
 Windows.</p>
 <div class="section" id="installation-using-microsoft-visual-studio-express-2005">
-<h4>Installation using Microsoft Visual Studio Express 2005<a class="headerlink" href="#installation-using-microsoft-visual-studio-express-2005" title="Permalink to this headline">¶</a></h4>
+<h4>Installation using Microsoft Visual Studio Express 2005</h4>
 <p>You can compile Mychem with Microsoft Visual C++ 2005 Express Edition (
 MSVC++ ). This software can be downloaded from the <a class="reference external" href="http://www.microsoft.com/express/2005/">Microsoft MSDN
 Website</a>. To complete the
@@ -428,7 +428,7 @@ directory.</p>
 </div>
 </div>
 <div class="section" id="mychem-api">
-<h2>Mychem API<a class="headerlink" href="#mychem-api" title="Permalink to this headline">¶</a></h2>
+<h2>Mychem API</h2>
 <p>API documentation is available on the <a class="reference external" href="http://mychem.sourceforge.net/api/index.html">Mychem
 website</a>.</p>
 <p>You can also build the documentation yourself, by using the <a class="reference external" href="http://www.doxygen.org/">Doxygen
