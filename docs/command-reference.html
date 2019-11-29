@@ -4,23 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Command Reference &#8212; Mychem 1.0.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="canonical" href="https://mychem.github.io/docs/command-reference.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
@@ -30,8 +24,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -40,7 +33,7 @@
           <div class="body" role="main">
             
   <div class="section" id="command-reference">
-<h1>Command Reference</h1>
+<h1>Command Reference<a class="headerlink" href="#command-reference" title="Permalink to this headline"> </a></h1>
 <p>This chapter describes all SQL commands provided by Mychem. These
 commands are classified in five sections:</p>
 <ul class="simple">
@@ -56,7 +49,7 @@ compare chemical structures.</li>
 compute molecular properties.</li>
 </ul>
 <div class="section" id="the-default-molecule-type">
-<h2>The Default Molecule Type</h2>
+<h2>The Default Molecule Type<a class="headerlink" href="#the-default-molecule-type" title="Permalink to this headline"> </a></h2>
 <p>Many functions are using or returning a molecule in <em>DEFAULT_TYPE</em>
 format. Since version 0.6.0 of Mychem, the DEFAULT_TYPE format is <em>MDL
 Molfile (V2000)</em>. In earlier versions, the DEFAULT_TYPE format was
@@ -68,7 +61,7 @@ it permits to store 2D or 3D coordinates. Moreover, the MDL Molfile
 format is commonly used by many softwares.</p>
 </div>
 <div class="section" id="conversion-commands">
-<h2>Conversion Commands</h2>
+<h2>Conversion Commands<a class="headerlink" href="#conversion-commands" title="Permalink to this headline"> </a></h2>
 <p>Conversion commmands permit to convert chemical data from a format to
 another format. Mychem uses the Open Babel library for the conversion,
 but does not implement all the 80 chemical file formats supported by
@@ -83,10 +76,10 @@ tracker</a>.</p>
 <p>If a function of this section fails, it returns an empty string.</p>
 </div></blockquote>
 <ul>
-<li><p class="first"><code class="docutils literal"><span class="pre">CML_TO_MOLECULE(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">CML_TO_MOLECULE</span></code> converts a <em>molecule</em> in CML format to a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">CML_TO_MOLECULE(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">CML_TO_MOLECULE</span></code> converts a <em>molecule</em> in CML format to a
 molecule in DEFAULT_TYPE format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">CML_TO_MOLECULE</span><span class="p">(</span><span class="n">cml_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">CML_TO_MOLECULE</span><span class="p">(</span><span class="n">cml_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">-</span><span class="n">Aminoacetic</span> <span class="n">acid</span>
  <span class="n">OpenBabel11190809032D</span>
@@ -115,10 +108,10 @@ molecule in DEFAULT_TYPE format.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLECULE_TO_CML(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLECULE_TO_CML</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_CML(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_CML</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format
 to a molecule in CML format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_CML</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_CML</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">molecule</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;id2-Aminoacetic acid&quot;</span><span class="o">&gt;</span>
  <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">-</span><span class="n">Aminoacetic</span> <span class="n">acid</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
@@ -149,12 +142,12 @@ to a molecule in CML format.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">FINGERPRINT(molecule,</span> <span class="pre">type)</span></code></p>
-<p><code class="docutils literal"><span class="pre">FINGERPRINT</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format to a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">FINGERPRINT(molecule,</span> <span class="pre">type)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">FINGERPRINT</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format to a
 fingerprint. The fingerprint type is specified by the second argument
 (FP2, FP3 or FP4). The SQL type of the converted molecule is a binary
 string for all kinds of fingerprint.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">FINGERPRINT</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">,</span> <span class="s2">&quot;FP2&quot;</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">FINGERPRINT</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">,</span> <span class="s2">&quot;FP2&quot;</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="n">binary</span> <span class="n">fingerprint</span> <span class="p">(</span><span class="nb">type</span> <span class="n">FP2</span><span class="p">)</span>
 </pre></div>
@@ -163,44 +156,44 @@ string for all kinds of fingerprint.</p>
 <p>Tanimoto scoring can be improved by using a concatenation of
 different fingerprint types. The concatenation of fingerprints
 can be performed with the following query:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">CONCAT</span><span class="p">(</span><span class="n">FINGERPRINT</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">,</span><span class="s2">&quot;FP2&quot;</span><span class="p">),</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">CONCAT</span><span class="p">(</span><span class="n">FINGERPRINT</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">,</span><span class="s2">&quot;FP2&quot;</span><span class="p">),</span>
     <span class="o">-&gt;</span> <span class="n">FINGERPRINT</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">,</span><span class="s2">&quot;FP3&quot;</span><span class="p">))</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="nb">id</span><span class="o">=</span><span class="mi">9</span><span class="p">;</span>
        <span class="o">-&gt;</span> <span class="n">binary</span> <span class="n">fingerprint</span> <span class="p">(</span><span class="nb">type</span> <span class="n">FP2</span> <span class="o">+</span> <span class="nb">type</span> <span class="n">FP3</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">FINGERPRINT2(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">FINGERPRINT2</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format to a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">FINGERPRINT2(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">FINGERPRINT2</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format to a
 FP2 fingerprint. The SQL type of FP2 fingerprints is a binary string.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">FINGERPRINT2</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">FINGERPRINT2</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="n">binary</span> <span class="n">fingerprint</span> <span class="p">(</span><span class="nb">type</span> <span class="n">FP2</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">FINGERPRINT3(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">FINGERPRINT3</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format to a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">FINGERPRINT3(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">FINGERPRINT3</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format to a
 FP3 fingerprint. The SQL type of FP3 fingerprints is a binary string.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">FINGERPRINT3</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">FINGERPRINT3</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="n">binary</span> <span class="n">fingerprint</span> <span class="p">(</span><span class="nb">type</span> <span class="n">FP3</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">FINGERPRINT4(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">FINGERPRINT4</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format to a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">FINGERPRINT4(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">FINGERPRINT4</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format to a
 FP4 fingerprint. The SQL type of FP4 fingerprints is a binary string.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">FINGERPRINT4</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">FINGERPRINT4</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="n">binary</span> <span class="n">fingerprint</span> <span class="p">(</span><span class="nb">type</span> <span class="n">FP4</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">INCHI_TO_MOLECULE(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">INCHI_TO_MOLECULE</span></code> converts a <em>molecule</em> in InChI format to a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">INCHI_TO_MOLECULE(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">INCHI_TO_MOLECULE</span></code> converts a <em>molecule</em> in InChI format to a
 molecule in DEFAULT_TYPE format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">INCHI_TO_MOLECULE</span><span class="p">(</span><span class="n">inchi_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">INCHI_TO_MOLECULE</span><span class="p">(</span><span class="n">inchi_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span>
  <span class="n">OpenBabel11190809142D</span>
@@ -219,22 +212,22 @@ molecule in DEFAULT_TYPE format.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLECULE_TO_INCHI(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLECULE_TO_INCHI</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_INCHI(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_INCHI</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format
 to a molecule in InChI format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_INCHI</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_INCHI</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="n">InChI</span><span class="o">=</span><span class="mi">1</span><span class="n">S</span><span class="o">/</span><span class="n">C2H5NO2</span><span class="o">/</span><span class="n">c3</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="mi">5</span><span class="o">/</span><span class="n">h1</span><span class="p">,</span><span class="mi">3</span><span class="n">H2</span><span class="p">,(</span><span class="n">H</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Note</strong></p>
-<p>The <code class="docutils literal"><span class="pre">INCHI_VERSION</span></code> function permits to know
+<p>The <code class="docutils literal notranslate"><span class="pre">INCHI_VERSION</span></code> function permits to know
 which version of the InChI library is used.</p>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOL2_TO_MOLECULE(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOL2_TO_MOLECULE</span></code> converts a <em>molecule</em> in Sybyl Mol2 format to
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOL2_TO_MOLECULE(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOL2_TO_MOLECULE</span></code> converts a <em>molecule</em> in Sybyl Mol2 format to
 a molecule in DEFAULT_TYPE format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOL2_TO_MOLECULE</span><span class="p">(</span><span class="n">mol2_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOL2_TO_MOLECULE</span><span class="p">(</span><span class="n">mol2_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">-</span><span class="n">Aminoacetic</span> <span class="n">acid</span>
  <span class="n">OpenBabel11190809032D</span>
@@ -263,10 +256,10 @@ a molecule in DEFAULT_TYPE format.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLECULE_TO_MOL2(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLECULE_TO_MOL2</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_MOL2(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_MOL2</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format
 to a molecule in Sybyl Mol2 format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_MOL2</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_MOL2</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;@&lt;</span><span class="n">TRIPOS</span><span class="o">&gt;</span><span class="n">MOLECULE</span>
 <span class="mi">2</span><span class="o">-</span><span class="n">Aminoacetic</span> <span class="n">acid</span>
@@ -298,12 +291,12 @@ to a molecule in Sybyl Mol2 format.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLECULE_TO_MOLECULE(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLECULE_TO_MOLECULE</span></code> converts a <em>molecule</em> in the old
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_MOLECULE(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_MOLECULE</span></code> converts a <em>molecule</em> in the old
 DEFAULT_TYPE format (InChI) to a molecule in the current
 DEFAULT_TYPE format (MDL Molfile). This function is useful when
 updating a database with a new version of Mychem.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_MOLECULE</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_MOLECULE</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span>
  <span class="n">OpenBabel11190809092D</span>
@@ -322,20 +315,20 @@ updating a database with a new version of Mychem.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLECULE_TO_SERIALIZEDOBMOL(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLECULE_TO_SERIALIZEDOBMOL</span></code> converts a <em>molecule</em> in
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_SERIALIZEDOBMOL(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_SERIALIZEDOBMOL</span></code> converts a <em>molecule</em> in
 DEFAULT_TYPE format to a serialized OBMol object. The SQL type of
 the serialized object is a binary string.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_SERIALIZEDOBMOL</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_SERIALIZEDOBMOL</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span>
     <span class="o">-&gt;</span> <span class="n">FROM</span> <span class="n">tbl_name</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="n">binary</span> <span class="n">string</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLFILE_TO_MOLECULE(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLFILE_TO_MOLECULE</span></code> converts a <em>molecule</em> in MDL Molfile
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLFILE_TO_MOLECULE(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLFILE_TO_MOLECULE</span></code> converts a <em>molecule</em> in MDL Molfile
 (V2000) format to a molecule in DEFAULT_TYPE format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLFILE_TO_MOLECULE</span><span class="p">(</span><span class="n">molfile_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLFILE_TO_MOLECULE</span><span class="p">(</span><span class="n">molfile_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">-</span><span class="n">Aminoacetic</span> <span class="n">acid</span>
  <span class="n">OpenBabel12091111263D</span>
@@ -364,10 +357,10 @@ the serialized object is a binary string.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLECULE_TO_MOLFILE(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLECULE_TO_MOLFILE</span></code> converts a <em>molecule</em> in DEFAULT_TYPE
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_MOLFILE(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_MOLFILE</span></code> converts a <em>molecule</em> in DEFAULT_TYPE
 format to a molecule in MDL Molfile (V2000) format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_MOLFILE</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_MOLFILE</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">-</span><span class="n">Aminoacetic</span> <span class="n">acid</span>
  <span class="n">OpenBabel11190809062D</span>
@@ -397,10 +390,10 @@ format to a molecule in MDL Molfile (V2000) format.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">PDB_TO_MOLECULE(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">PDB_TO_MOLECULE</span></code> converts a <em>molecule</em> in PDB format to a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">PDB_TO_MOLECULE(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">PDB_TO_MOLECULE</span></code> converts a <em>molecule</em> in PDB format to a
 molecule in DEFAULT_TYPE format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">PDB_TO_MOLECULE</span><span class="p">(</span><span class="n">pdb_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">PDB_TO_MOLECULE</span><span class="p">(</span><span class="n">pdb_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;1CRN&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span>
  <span class="n">OpenBabel08210907243D</span>
@@ -439,10 +432,10 @@ molecule in DEFAULT_TYPE format.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">SMILES_TO_MOLECULE(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">SMILES_TO_MOLECULE</span></code> converts a <em>molecule</em> in SMILES format to a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">SMILES_TO_MOLECULE(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">SMILES_TO_MOLECULE</span></code> converts a <em>molecule</em> in SMILES format to a
 molecule in DEFAULT_TYPE format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">SMILES_TO_MOLECULE</span><span class="p">(</span><span class="n">smiles_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">SMILES_TO_MOLECULE</span><span class="p">(</span><span class="n">smiles_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span>
  <span class="n">OpenBabel11190809142D</span>
@@ -461,10 +454,10 @@ molecule in DEFAULT_TYPE format.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLECULE_TO_SMILES(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLECULE_TO_SMILES</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_SMILES(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_SMILES</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format
 to molecule in SMILES format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_SMILES</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_SMILES</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="n">C</span><span class="p">(</span><span class="n">C</span><span class="p">(</span><span class="o">=</span><span class="n">O</span><span class="p">)</span><span class="n">O</span><span class="p">)</span><span class="n">N</span>
 </pre></div>
@@ -472,21 +465,21 @@ to molecule in SMILES format.</p>
 <p><strong>Note</strong></p>
 <p>If you need a single canonical form for any particular molecule,
 regardless of atom order, the use of the
-<code class="docutils literal"><span class="pre">MOLECULE_TO_CANONICAL_SMILES</span></code> function should be preferred.</p>
+<code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_CANONICAL_SMILES</span></code> function should be preferred.</p>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLECULE_TO_CANONICAL_SMILES(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLECULE_TO_CANONICAL_SMILES</span></code> converts a <em>molecule</em> in
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_CANONICAL_SMILES(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_CANONICAL_SMILES</span></code> converts a <em>molecule</em> in
 DEFAULT_TYPE format to a molecule in Canonical SMILES format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_CANONICAL_SMILES</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_CANONICAL_SMILES</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span>
     <span class="o">-&gt;</span> <span class="n">FROM</span> <span class="n">tbl_name</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="n">NCC</span><span class="p">(</span><span class="o">=</span><span class="n">O</span><span class="p">)</span><span class="n">O</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">V3000_TO_MOLECULE(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">V3000_TO_MOLECULE</span></code> converts a <em>molecule</em> in MDL Molfile (V3000)
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">V3000_TO_MOLECULE(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">V3000_TO_MOLECULE</span></code> converts a <em>molecule</em> in MDL Molfile (V3000)
 format to a molecule in DEFAULT_TYPE format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">V3000_TO_MOLECULE</span><span class="p">(</span><span class="n">V3000_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">V3000_TO_MOLECULE</span><span class="p">(</span><span class="n">V3000_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">-</span><span class="n">Aminoacetic</span> <span class="n">acid</span>
  <span class="n">OpenBabel11190809082D</span>
@@ -515,10 +508,10 @@ format to a molecule in DEFAULT_TYPE format.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLECULE_TO_V3000(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLECULE_TO_V3000</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_V3000(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_V3000</span></code> converts a <em>molecule</em> in DEFAULT_TYPE format
 to a molecule in MDL Molfile (V3000) format.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_V3000</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLECULE_TO_V3000</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">-</span><span class="n">Aminoacetic</span> <span class="n">acid</span>
  <span class="n">OpenBabel11190809132D</span>
@@ -557,27 +550,27 @@ to a molecule in MDL Molfile (V3000) format.</p>
 </ul>
 </div>
 <div class="section" id="helper-commands">
-<h2>Helper Commands</h2>
+<h2>Helper Commands<a class="headerlink" href="#helper-commands" title="Permalink to this headline"> </a></h2>
 <p>This section details <em>helper</em> functions. They permit to get informations
 about the Mychem environment.</p>
 <ul>
-<li><p class="first"><code class="docutils literal"><span class="pre">INCHI_VERSION()</span></code></p>
-<p><code class="docutils literal"><span class="pre">INCHI_VERSION</span></code> returns the version of the InChI library.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">INCHI_VERSION</span><span class="p">();</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">INCHI_VERSION()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">INCHI_VERSION</span></code> returns the version of the InChI library.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">INCHI_VERSION</span><span class="p">();</span>
         <span class="o">-&gt;</span> <span class="mf">1.02</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MYCHEM_VERSION()</span></code></p>
-<p><code class="docutils literal"><span class="pre">MYCHEM_VERSION</span></code> returns the Mychem version.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MYCHEM_VERSION</span><span class="p">();</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MYCHEM_VERSION()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MYCHEM_VERSION</span></code> returns the Mychem version.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MYCHEM_VERSION</span><span class="p">();</span>
         <span class="o">-&gt;</span> <span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">OPENBABEL_VERSION()</span></code></p>
-<p><code class="docutils literal"><span class="pre">OPENBABEL_VERSION</span></code> returns the Open Babel version.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">OPENBABEL_VERSION</span><span class="p">();</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">OPENBABEL_VERSION()</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">OPENBABEL_VERSION</span></code> returns the Open Babel version.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">OPENBABEL_VERSION</span><span class="p">();</span>
         <span class="o">-&gt;</span> <span class="mf">2.3</span><span class="o">.</span><span class="mi">2</span>
 </pre></div>
 </div>
@@ -585,17 +578,17 @@ about the Mychem environment.</p>
 </ul>
 </div>
 <div class="section" id="modification-commands">
-<h2>Modification Commands</h2>
+<h2>Modification Commands<a class="headerlink" href="#modification-commands" title="Permalink to this headline"> </a></h2>
 <p>This section describes <em>modification</em> functions that modify chemical
 structures. The following functions are fully working starting on
 version 0.6.0 of Mychem.</p>
 <p><strong>Note</strong></p>
 <p>If a function of this section fails, it returns an empty string.</p>
 <ul>
-<li><p class="first"><code class="docutils literal"><span class="pre">ADD_HYDROGENS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">ADD_HYDROGENS</span></code> adds hydrogens to a <em>molecule</em> (makes explicit
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">ADD_HYDROGENS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">ADD_HYDROGENS</span></code> adds hydrogens to a <em>molecule</em> (makes explicit
 the hydrogen atoms).</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">ADD_HYDROGENS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">ADD_HYDROGENS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">-</span><span class="n">Aminoacetic</span> <span class="n">acid</span>
  <span class="n">OpenBabel11190809242D</span>
@@ -624,10 +617,10 @@ the hydrogen atoms).</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">REMOVE_HYDROGENS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">REMOVE_HYDROGENS</span></code> removes the hydrogens from a <em>molecule</em> (makes
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">REMOVE_HYDROGENS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">REMOVE_HYDROGENS</span></code> removes the hydrogens from a <em>molecule</em> (makes
 implicit the hydrogen atoms).</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">REMOVE_HYDROGENS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">REMOVE_HYDROGENS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span>  <span class="mi">2</span><span class="o">-</span><span class="n">Aminoacetic</span> <span class="n">acid</span>
  <span class="n">OpenBabel11190809252D</span>
@@ -646,10 +639,10 @@ implicit the hydrogen atoms).</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">STRIP_SALTS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">STRIP_SALTS</span></code> removes all atoms except for the larger contiguous
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">STRIP_SALTS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">STRIP_SALTS</span></code> removes all atoms except for the larger contiguous
 fragment.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">STRIP_SALTS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">STRIP_SALTS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sodium 2-aminoacetate&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span>
  <span class="n">OpenBabel11190812342D</span>
@@ -672,59 +665,59 @@ fragment.</p>
 </ul>
 </div>
 <div class="section" id="molmatch-commands">
-<h2>Molmatch Commands</h2>
+<h2>Molmatch Commands<a class="headerlink" href="#molmatch-commands" title="Permalink to this headline"> </a></h2>
 <p>The <em>molmatch</em> functions permit to compare chemical structures.</p>
 <ul>
-<li><p class="first"><code class="docutils literal"><span class="pre">BIT_FP_AND(fingerprint,</span> <span class="pre">fingerprint)</span></code></p>
-<p><code class="docutils literal"><span class="pre">BIT_FP_AND</span></code> operates on two fingerprints (bit patterns) of equal
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">BIT_FP_AND(fingerprint,</span> <span class="pre">fingerprint)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">BIT_FP_AND</span></code> operates on two fingerprints (bit patterns) of equal
 length and performs the logical AND operation on each pair of
 corresponding bits. In each pair, the result is 1 if the both bits
 are 1. Otherwise, the result is 0. If the two fingerprints do not
 have the same length, the function returns NULL.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">BIT_FP_AND</span><span class="p">(</span><span class="n">fingerprint1</span><span class="p">,</span> <span class="n">fingerprint2</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">BIT_FP_AND</span><span class="p">(</span><span class="n">fingerprint1</span><span class="p">,</span> <span class="n">fingerprint2</span><span class="p">);</span>
         <span class="o">-&gt;</span> <span class="n">binary</span> <span class="n">fingerprint</span>
 </pre></div>
 </div>
 <p><strong>Note</strong></p>
-<p>The <code class="docutils literal"><span class="pre">BIT_FP_AND</span></code> function is very useful when
+<p>The <code class="docutils literal notranslate"><span class="pre">BIT_FP_AND</span></code> function is very useful when
 working with structure fingerprints. For example, if a molecule
 (with a fingerprint fp1) is a substructure of an other molecule
 (with a fingerprint fp2), the following property is observed:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">TANIMOTO</span><span class="p">(</span><span class="n">BIT_FP_AND</span><span class="p">(</span><span class="n">fp1</span><span class="p">,</span> <span class="n">fp2</span><span class="p">),</span> <span class="n">fp1</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">TANIMOTO</span><span class="p">(</span><span class="n">BIT_FP_AND</span><span class="p">(</span><span class="n">fp1</span><span class="p">,</span> <span class="n">fp2</span><span class="p">),</span> <span class="n">fp1</span><span class="p">);</span>
         <span class="o">-&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">BIT_FP_COUNT(fingerprint)</span></code></p>
-<p><code class="docutils literal"><span class="pre">BIT_FP_COUNT</span></code> returns the number of bits that are set in the
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">BIT_FP_COUNT(fingerprint)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">BIT_FP_COUNT</span></code> returns the number of bits that are set in the
 <em>fingerprint</em> binary representation.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">BIT_FP_COUNT</span><span class="p">(</span><span class="n">fp_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">BIT_FP_COUNT</span><span class="p">(</span><span class="n">fp_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;1H-indole&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">23</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">BIT_FP_OR(fingerprint,</span> <span class="pre">fingerprint)</span></code></p>
-<p><code class="docutils literal"><span class="pre">BIT_FP_OR</span></code> operates on two fingerprints (bit patterns) of equal
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">BIT_FP_OR(fingerprint,</span> <span class="pre">fingerprint)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">BIT_FP_OR</span></code> operates on two fingerprints (bit patterns) of equal
 length and performs the logical OR operation on each pair of
 corresponding bits. In each pair, if the first bit is 1 or the second
 bit is 1 (or both), the result is 1. Otherwise, the result is 0. If
 the two fingerprints do not have same length, the function returns
 NULL.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">BIT_FP_OR</span><span class="p">(</span><span class="n">fingerprint1</span><span class="p">,</span> <span class="n">fingerprint2</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">BIT_FP_OR</span><span class="p">(</span><span class="n">fingerprint1</span><span class="p">,</span> <span class="n">fingerprint2</span><span class="p">);</span>
         <span class="o">-&gt;</span> <span class="n">binary</span> <span class="n">fingerprint</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MATCH_SUBSTRUCT(query_smarts,</span> <span class="pre">reference_obmol)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MATCH_SUBSTRUCT</span></code> checks if a <em>query_smarts</em> fragment is a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MATCH_SUBSTRUCT(query_smarts,</span> <span class="pre">reference_obmol)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MATCH_SUBSTRUCT</span></code> checks if a <em>query_smarts</em> fragment is a
 substructure of a <em>reference_obmol</em> molecule. The first argument is
 a SMARTS string, whereas the second argument is a serialized OBMol
 object. The second argument type is generated by the
-<code class="docutils literal"><span class="pre">MOLECULE_TO_SERIALIZEDOBMOL</span></code> function. If the <em>query_smarts</em> is
+<code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_SERIALIZEDOBMOL</span></code> function. If the <em>query_smarts</em> is
 a substructure of <em>reference_obmol</em>, the function returns 1,
 otherwise, it returns 0.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MATCH_SUBSTRUCT</span><span class="p">(</span><span class="s1">&#39;C=O&#39;</span><span class="p">,</span> <span class="n">serializedobmol_col</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MATCH_SUBSTRUCT</span><span class="p">(</span><span class="s1">&#39;C=O&#39;</span><span class="p">,</span> <span class="n">serializedobmol_col</span><span class="p">)</span>
     <span class="o">-&gt;</span> <span class="n">FROM</span> <span class="n">tbl_name</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">1</span>
 </pre></div>
@@ -732,17 +725,17 @@ otherwise, it returns 0.</p>
 <p><strong>Note</strong></p>
 <p>If the function encounters an error, it returns NULL.</p>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">SUBSTRUCT_ATOM_IDS(query_smarts,</span> <span class="pre">reference_obmol)</span></code></p>
-<p><code class="docutils literal"><span class="pre">SUBSTRUCT_ATOM_IDS</span></code> returns the atom ids of a <em>reference_obmol</em>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">SUBSTRUCT_ATOM_IDS(query_smarts,</span> <span class="pre">reference_obmol)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">SUBSTRUCT_ATOM_IDS</span></code> returns the atom ids of a <em>reference_obmol</em>
 molecule that are contained in substructures matching a
 <em>query_smarts</em> fragment. The first argument is a SMARTS string,
 whereas the second argument is a serialized OBMol object. The second
-argument type is generated by the <code class="docutils literal"><span class="pre">MOLECULE_TO_SERIALIZEDOBMOL</span></code>
+argument type is generated by the <code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_SERIALIZEDOBMOL</span></code>
 function. If a <em>reference_obmol</em> molecule contains several fragments
 matching a <em>query_smarts</em> fragment, a list of items is returned.
 Each item contains a fragment’s atom ids and is separated from the
 next item by a semicolon character.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">SUBSTRUCT_ATOM_IDS</span><span class="p">(</span><span class="s1">&#39;C(=O)&#39;</span><span class="p">,</span> <span class="n">serializedobmol_col</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">SUBSTRUCT_ATOM_IDS</span><span class="p">(</span><span class="s1">&#39;C(=O)&#39;</span><span class="p">,</span> <span class="n">serializedobmol_col</span><span class="p">)</span>
     <span class="o">-&gt;</span> <span class="n">FROM</span> <span class="n">tbl_name</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span> <span class="mi">3</span> <span class="p">;</span>
 </pre></div>
@@ -750,13 +743,13 @@ next item by a semicolon character.</p>
 <p><strong>Note</strong></p>
 <p>If the function encounter an error, it returns NULL.</p>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">SUBSTRUCT_COUNT(query_smarts,</span> <span class="pre">reference_obmol)</span></code></p>
-<p><code class="docutils literal"><span class="pre">SUBSTRUCT_COUNT</span></code> returns the number of <em>query_smarts</em> fragments
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">SUBSTRUCT_COUNT(query_smarts,</span> <span class="pre">reference_obmol)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">SUBSTRUCT_COUNT</span></code> returns the number of <em>query_smarts</em> fragments
 founded in a <em>reference_obmol</em> molecule. The first argument is a
 SMARTS string, whereas the second argument is a serialized OBMol
 object. The second argument type is generated by the
-<code class="docutils literal"><span class="pre">MOLECULE_TO_SERIALIZEDOBMOL</span></code> function.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">SUBSTRUCT_COUNT</span><span class="p">(</span><span class="s1">&#39;C(=O)&#39;</span><span class="p">,</span> <span class="n">serializedobmol_col</span><span class="p">)</span>
+<code class="docutils literal notranslate"><span class="pre">MOLECULE_TO_SERIALIZEDOBMOL</span></code> function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">SUBSTRUCT_COUNT</span><span class="p">(</span><span class="s1">&#39;C(=O)&#39;</span><span class="p">,</span> <span class="n">serializedobmol_col</span><span class="p">)</span>
     <span class="o">-&gt;</span> <span class="n">FROM</span> <span class="n">tbl_name</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span>
 </pre></div>
@@ -764,23 +757,23 @@ object. The second argument type is generated by the
 <p><strong>Note</strong></p>
 <p>If the function encounter an error, it returns NULL.</p>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">TANIMOTO(first_fingerprint,</span> <span class="pre">second_fingerprint)</span></code></p>
-<p><code class="docutils literal"><span class="pre">TANIMOTO</span></code> returns the tanimoto coefficient between two
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">TANIMOTO(first_fingerprint,</span> <span class="pre">second_fingerprint)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">TANIMOTO</span></code> returns the tanimoto coefficient between two
 fingerprints. Fingerprints are bit patterns and can be generated with
-the <code class="docutils literal"><span class="pre">FINGERPRINT</span></code> function. The returned value is
+the <code class="docutils literal notranslate"><span class="pre">FINGERPRINT</span></code> function. The returned value is
 comprised between 0 and 1. The higher the tanimoto coefficient is,
 the more the molecules are similar.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">TANIMOTO</span><span class="p">(</span><span class="n">molecule_fp</span><span class="p">,</span> <span class="n">fp_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">TANIMOTO</span><span class="p">(</span><span class="n">molecule_fp</span><span class="p">,</span> <span class="n">fp_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mf">0.8934</span>
 </pre></div>
 </div>
 <p><strong>Note</strong></p>
-<p>The use of another Mychem functions (like <code class="docutils literal"><span class="pre">FINGERPRINT</span></code> or
-<code class="docutils literal"><span class="pre">FINGERPRINT2</span></code>) within the <code class="docutils literal"><span class="pre">TANIMOTO</span></code> function makes the
+<p>The use of another Mychem functions (like <code class="docutils literal notranslate"><span class="pre">FINGERPRINT</span></code> or
+<code class="docutils literal notranslate"><span class="pre">FINGERPRINT2</span></code>) within the <code class="docutils literal notranslate"><span class="pre">TANIMOTO</span></code> function makes the
 query slower. In  order to get the best performance, you should
-use the <code class="docutils literal"><span class="pre">SET</span></code> function of MySQL:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SET</span> <span class="nd">@fp</span> <span class="o">=</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">FINGERPRINT2</span><span class="p">(</span>
+use the <code class="docutils literal notranslate"><span class="pre">SET</span></code> function of MySQL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SET</span> <span class="nd">@fp</span> <span class="o">=</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">FINGERPRINT2</span><span class="p">(</span>
     <span class="o">-&gt;</span> <span class="n">SMILES_TO_MOLECULE</span><span class="p">(</span><span class="s1">&#39;C(C(=O)O)N&#39;</span><span class="p">)));</span>
 <span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="nb">id</span> <span class="n">FROM</span> <span class="n">tbl_name</span> <span class="n">WHERE</span> <span class="n">TANIMOTO</span><span class="p">(</span><span class="nd">@fp</span><span class="p">,</span> <span class="n">fp_col</span><span class="p">)</span>
     <span class="o">-&gt;</span> <span class="n">FROM</span> <span class="n">tbl_name</span> <span class="o">&gt;</span> <span class="mf">0.7</span><span class="p">;</span>
@@ -791,57 +784,57 @@ use the <code class="docutils literal"><span class="pre">SET</span></code> funct
 </ul>
 </div>
 <div class="section" id="property-commands">
-<h2>Property Commands</h2>
+<h2>Property Commands<a class="headerlink" href="#property-commands" title="Permalink to this headline"> </a></h2>
 <p>This section describes several functions that calculate molecular
 properties.</p>
 <ul>
-<li><p class="first"><code class="docutils literal"><span class="pre">EXACTMASS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">EXACTMASS</span></code> returns the monoisotopic molecular weight of a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">EXACTMASS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">EXACTMASS</span></code> returns the monoisotopic molecular weight of a
 <em>molecule</em>. The monoisotopic molecular weight is defined as the
 molecular weight calculated using the mass of the most abundant
 isotope for each element of a molecule. The unit of the returned
 value is g.mol<sup>-1</sup>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">EXACTMASS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">EXACTMASS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mf">75.032028</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">IS_2D(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">IS_2D</span></code> returns 1 if a molecule has 2D coordinates.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">IS_2D</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">IS_2D(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">IS_2D</span></code> returns 1 if a molecule has 2D coordinates.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">IS_2D</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">IS_3D(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">IS_3D</span></code> returns 1 if a molecule has 3D coordinates.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">IS_3D</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">IS_3D(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">IS_3D</span></code> returns 1 if a molecule has 3D coordinates.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">IS_3D</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">IS_CHIRAL(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">IS_CHIRAL</span></code> returns 1 if a molecule is chiral.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">IS_CHIRAL</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">IS_CHIRAL(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">IS_CHIRAL</span></code> returns 1 if a molecule is chiral.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">IS_CHIRAL</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2S-Butan-2-ol&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLFORMULA(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLFORMULA</span></code> returns the molecular formula of a <em>molecule</em>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLFORMULA</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLFORMULA(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLFORMULA</span></code> returns the molecular formula of a <em>molecule</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLFORMULA</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="n">C2H5NO2</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLLOGP(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLLOGP</span></code> returns the LogP of a <em>molecule</em>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLLOGP</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLLOGP(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLLOGP</span></code> returns the LogP of a <em>molecule</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLLOGP</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="o">-</span><span class="mf">0.27</span>
 </pre></div>
@@ -849,13 +842,13 @@ value is g.mol<sup>-1</sup>.</p>
 <p><strong>Note</strong></p>
 <p>Note that the result of this function is depending on the hydrogen
 atoms. If there is any doubt on the presence of hydrogen atoms in
-the molecule, it is recommended to use the <code class="docutils literal"><span class="pre">ADD_HYDROGENS</span></code>
+the molecule, it is recommended to use the <code class="docutils literal notranslate"><span class="pre">ADD_HYDROGENS</span></code>
 function.</p>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLMR(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLMR</span></code> returns the molar refractivity of a <em>molecule</em>. The unit
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLMR(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLMR</span></code> returns the molar refractivity of a <em>molecule</em>. The unit
 of the returned value is J.mol<sup>-1</sup>.K<sup>-1</sup>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLMR</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLMR</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mf">16.2072</span>
 </pre></div>
@@ -864,12 +857,12 @@ of the returned value is J.mol<sup>-1</sup>.K<sup>-1</sup>.</p>
 <p>Note that the result of this function is depending on the
 hydrogen atoms. If there is any doubt on the presence of hydrogen
 atoms in the molecule, it is recommended to use the
-<code class="docutils literal"><span class="pre">ADD_HYDROGENS</span></code> function.</p>
+<code class="docutils literal notranslate"><span class="pre">ADD_HYDROGENS</span></code> function.</p>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLPSA(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLPSA</span></code> returns the topological polar surface area of a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLPSA(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLPSA</span></code> returns the topological polar surface area of a
 molecule. The unit of the returned value is Å<sup>2</sup>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLPSA</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLPSA</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mf">63.32</span>
 </pre></div>
@@ -878,21 +871,21 @@ molecule. The unit of the returned value is Å<sup>2</sup>.</p>
 <p>Note that the result of this function is depending on the
 hydrogen atoms. If there is any doubt on the presence of hydrogen
 atoms in the molecule, it is recommended to use the
-<code class="docutils literal"><span class="pre">ADD_HYDROGENS</span></code> function.</p>
+<code class="docutils literal notranslate"><span class="pre">ADD_HYDROGENS</span></code> function.</p>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">MOLWEIGHT(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">MOLWEIGHT</span></code> returns the molecular weight of a <em>molecule</em>. The
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">MOLWEIGHT(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">MOLWEIGHT</span></code> returns the molecular weight of a <em>molecule</em>. The
 unit of the returned value is g.mol<sup>-1</sup>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLWEIGHT</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">MOLWEIGHT</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mf">75.066600</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">NUMBER_OF_ACCEPTORS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">NUMBER_OF_ACCEPTORS</span></code> returns the number of hydrogen-bond
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_ACCEPTORS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_ACCEPTORS</span></code> returns the number of hydrogen-bond
 acceptors in a <em>molecule</em>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_ACCEPTORS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_ACCEPTORS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">3</span>
 </pre></div>
@@ -901,28 +894,28 @@ acceptors in a <em>molecule</em>.</p>
 <p>Note that the result of this function is depending on the
 hydrogen atoms. If there is any doubt on the presence of hydrogen
 atoms in the molecule, it is recommended to use the
-<code class="docutils literal"><span class="pre">ADD_HYDROGENS</span></code> function.</p>
+<code class="docutils literal notranslate"><span class="pre">ADD_HYDROGENS</span></code> function.</p>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">NUMBER_OF_ATOMS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">NUMBER_OF_ATOMS</span></code> returns the number of atoms in a <em>molecule</em>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_ATOMS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_ATOMS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_ATOMS</span></code> returns the number of atoms in a <em>molecule</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_ATOMS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">NUMBER_OF_BONDS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">NUMBER_OF_BONDS</span></code> returns the number of bonds in a <em>molecule</em>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_BONDS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_BONDS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_BONDS</span></code> returns the number of bonds in a <em>molecule</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_BONDS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">9</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">NUMBER_OF_DONORS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">NUMBER_OF_DONORS</span></code> returns the numbers of hydrogen-bond donors in
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_DONORS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_DONORS</span></code> returns the numbers of hydrogen-bond donors in
 a <em>molecule</em>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_DONORS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_DONORS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span>
 </pre></div>
@@ -930,51 +923,51 @@ a <em>molecule</em>.</p>
 <p><strong>Note</strong></p>
 <p>Note that the result of this function is depending on the
 presence of hydrogen atoms in the molecule. If the hydrogen atoms
-are not described by the molecule, the <code class="docutils literal"><span class="pre">ADD_HYDROGENS</span></code> function
+are not described by the molecule, the <code class="docutils literal notranslate"><span class="pre">ADD_HYDROGENS</span></code> function
 must be used. The two following examples described the effect of
 the ADD_HYDROGENS function:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_DONORS</span><span class="p">(</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_DONORS</span><span class="p">(</span>
     <span class="o">-&gt;</span> <span class="n">SMILES_TO_MOLECULE</span><span class="p">(</span><span class="s1">&#39;O=C(O)CCN&#39;</span><span class="p">));</span>
         <span class="o">-&gt;</span> <span class="mi">0</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_DONORS</span><span class="p">(</span><span class="n">ADD_HYDROGENS</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_DONORS</span><span class="p">(</span><span class="n">ADD_HYDROGENS</span><span class="p">(</span>
     <span class="o">-&gt;</span> <span class="n">SMILES_TO_MOLECULE</span><span class="p">(</span><span class="s1">&#39;O=C(O)CCN&#39;</span><span class="p">)));</span>
         <span class="o">-&gt;</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">NUMBER_OF_HEAVY_ATOMS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">NUMBER_OF_HEAVY_ATOMS</span></code> returns the number of heavy atoms in a
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_HEAVY_ATOMS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_HEAVY_ATOMS</span></code> returns the number of heavy atoms in a
 <em>molecule</em> (all atoms except hydrogen).</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_HEAVY_ATOMS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_HEAVY_ATOMS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">5</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">NUMBER_OF_RINGS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">NUMBER_OF_RINGS</span></code> returns the number of rings in a <em>molecule</em>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_RINGS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_RINGS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_RINGS</span></code> returns the number of rings in a <em>molecule</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_RINGS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;adenine&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">NUMBER_OF_ROTABLE_BONDS(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">NUMBER_OF_ROTABLE_BONDS</span></code> returns the number of rotable bonds in
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_ROTABLE_BONDS(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_ROTABLE_BONDS</span></code> returns the number of rotable bonds in
 a <em>molecule</em>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_ROTABLE_BONDS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">NUMBER_OF_ROTABLE_BONDS</span><span class="p">(</span><span class="n">molecule_col</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">tbl_name</span>
     <span class="o">-&gt;</span> <span class="n">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;2-Aminoacetic acid&#39;</span><span class="p">;</span>
         <span class="o">-&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">TOTAL_CHARGE(molecule)</span></code></p>
-<p><code class="docutils literal"><span class="pre">TOTAL_CHARGE</span></code> returns the total charge of a <em>molecule</em>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">TOTAL_CHARGE</span><span class="p">(</span><span class="n">SMILES_TO_MOLECULE</span><span class="p">(</span><span class="s1">&#39;NCC(=O)[O-]&#39;</span><span class="p">));</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">TOTAL_CHARGE(molecule)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">TOTAL_CHARGE</span></code> returns the total charge of a <em>molecule</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">TOTAL_CHARGE</span><span class="p">(</span><span class="n">SMILES_TO_MOLECULE</span><span class="p">(</span><span class="s1">&#39;NCC(=O)[O-]&#39;</span><span class="p">));</span>
         <span class="o">-&gt;</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 </div>
@@ -999,12 +992,14 @@ a <em>molecule</em>.</p>
 </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -1015,7 +1010,7 @@ a <em>molecule</em>.</p>
       &copy;2019, Jérôme Pansanel.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
       |
