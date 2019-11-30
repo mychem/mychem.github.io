@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Installation &#8212; Mychem 1.0.0 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="static/language_data.js"></script>
     <link rel="canonical" href="https://mychem.github.io/docs/installation.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Using Mychem" href="using-mychem.html" />
     <link rel="prev" title="Introduction" href="introduction.html" />
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="static/custom.css" type="text/css" />
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -373,7 +373,7 @@ port.</p>
 <p>Once your compilation environment is ready, you can generate the MSVC++
 project file with CMake. Launch the CMake GUI and set up the source code
 directory and the build directory for the binaries.</p>
-<img alt="CMake screenshot 1" src="_images/cmake1.png" />
+<img alt="CMake screenshot 1" src="images/cmake1.png" />
 <p>Then, click on Configure. A window will appear to let you select what
 build system you want CMake to generate files for. Choose Visual Studio
 8 2005 and click on Ok. After some processing, CMake will raise an error
@@ -383,7 +383,7 @@ Advanced Values checkbox to display the full list of parameters. Find
 the lines with OPENBABEL2_INCLUDE_DIR, OPENBABEL2_LIBRARIES,
 MYSQL_INCUDE_DIR, MYSQL_LIBRARIES values. These lines are at the end
 of the list.</p>
-<img alt="CMake screenshot 2" src="_images/cmake2.png" />
+<img alt="CMake screenshot 2" src="images/cmake2.png" />
 <p>You have to set OPENBABEL2_INCLUDE_DIR to the directory <code class="docutils literal notranslate"><span class="pre">include</span></code>
 contained in the Open Babel source directory (i.e.,
 <code class="docutils literal notranslate"><span class="pre">C:/path/to/openbabel/include</span></code>) and OPENBABEL2_LIBRARIES to the file
@@ -394,7 +394,7 @@ respectively set to <code class="docutils literal notranslate"><span class="pre"
 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\MySQL\MySQL</span> <span class="pre">Server</span> <span class="pre">X.Y\opt\libmysql.lib</span></code>, where X.Y is the version of MySQL.</p>
 <p>Once the values are set, click on Configure and then on Ok. CMake
 generates the MSVC++ project file (<code class="docutils literal notranslate"><span class="pre">mychem.sln</span></code>) and exit.</p>
-<img alt="CMake screenshot 3" src="_images/cmake3.png" />
+<img alt="CMake screenshot 3" src="images/cmake3.png" />
 <p>Once the project file is generated, open it with MSVC++ . The
 <code class="docutils literal notranslate"><span class="pre">mychem.sln</span></code> project file should be located at
 <code class="docutils literal notranslate"><span class="pre">C:/path/to/mychem/build/</span></code>. Several modules are available for
@@ -475,7 +475,7 @@ url: <code class="docutils literal notranslate"><span class="pre">file:///path/t
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
       |
-      <a href="_sources/installation.rst.txt"
+      <a href="sources/installation.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
