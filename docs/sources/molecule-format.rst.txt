@@ -49,8 +49,7 @@ FP2
 
 FP2 fingerprints index small molecule fragments based on linear segments
 of up to 7 atoms in length. They are hash fingerprints. The
-specification of the FP2 fingerprints is available on the `Open Babel
-Website <http://openbabel.org/wiki/FP2>`_.
+specification of the FP2 fingerprints is available on the `FP2 page <http://openbabel.org/wiki/FP2>`_ from the Open Babel Wiki.
 
 FP3
 +++
@@ -59,7 +58,7 @@ FP3 fingerprints index small molecule fragments based on a list of SMART
 patterns. They are hash fingerprints. The SMART patterns are listed in
 the file named ``patterns.txt``, that is distributed with the Open Babel
 software. The specification of the FP3 fingerprints is available on the
-`Open Babel Website <http://openbabel.org/wiki/FP3>`_.
+`FP3 page <http://openbabel.org/wiki/FP3>`_ from the Open Babel Wiki.
 
 FP4
 +++

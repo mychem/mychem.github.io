@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Installation &#8212; Mychem 1.0.0 documentation</title>
+    <title>Installation &#8212; Mychem 1.0.1 documentation</title>
     <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
@@ -46,27 +46,6 @@ all the steps of compilation and installation of the application.</li>
 <li><a class="reference internal" href="#mychem-api"><span class="std std-ref">Mychem API</span></a> - tells how to build the API documentation of
 Mychem.</li>
 </ul>
-<div class="section" id="how-to-obtain-mychem">
-<h2>How to Obtain Mychem<a class="headerlink" href="#how-to-obtain-mychem" title="Permalink to this headline"> </a></h2>
-<p>At this time, Mychem is only available as a source package that you need
-to compile. You can also get the last snapshot directly from the GIT
-repository (take care, this version can be unstable). It is planned to
-release binaries in a future release of Mychem.</p>
-<div class="section" id="source-package">
-<h3>Source Package<a class="headerlink" href="#source-package" title="Permalink to this headline"> </a></h3>
-<p>The last source package can be found on the <a class="reference external" href="http://sourceforge.net/projects/mychem/files/">Project Homepage</a>
-hosted by SourceForge.</p>
-</div>
-<div class="section" id="git-repository">
-<h3>GIT Repository<a class="headerlink" href="#git-repository" title="Permalink to this headline"> </a></h3>
-<p>The last development version of Mychem can be obtained by cloning the
-<a class="reference external" href="http://github.com/mychem/mychem-code">GIT repository</a>. In case you
-are using a command line interface, follow this step:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/mychem/mychem-code.git
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"> </a></h2>
 <p>In order to successfully compile and install Mychem, you need the
@@ -95,17 +74,38 @@ libopenbabel-dev package.</p>
 </li>
 </ul>
 </div>
+<div class="section" id="how-to-obtain-mychem">
+<h2>How to Obtain Mychem<a class="headerlink" href="#how-to-obtain-mychem" title="Permalink to this headline"> </a></h2>
+<p>The stable versions of Mychem are released as a tarball that has to be
+extracted and compiled. The code can also be directly retrieven by
+cloning the mychem-code GIT repository. The following sections
+describe how to proceed.</p>
+<div class="section" id="source-archive">
+<h3>Source Archive<a class="headerlink" href="#source-archive" title="Permalink to this headline"> </a></h3>
+<p>The last stable version can be found on the <a class="reference external" href="https://github.com/mychem/mychem-code/releases">Mychem GitHub release page</a>. It is provided as
+ZIP and compressed TAR archives. The last stable version is v1.0.0.</p>
+</div>
+<div class="section" id="git-repository">
+<h3>GIT Repository<a class="headerlink" href="#git-repository" title="Permalink to this headline"> </a></h3>
+<p>The last development version of Mychem can be obtained by cloning the
+<a class="reference external" href="http://github.com/mychem/mychem-code">mychem-code GIT repository</a>. In case you
+are using a command line interface, follow this step:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/mychem/mychem-code.git
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="compilation-and-installation">
 <h2>Compilation and Installation<a class="headerlink" href="#compilation-and-installation" title="Permalink to this headline"> </a></h2>
-<p>This section describes the compilation of Mychem’s source files for
+<p>This section describes the compilation of Mychem’s source code for
 GNU/Linux, Mac OS X and Microsoft Windows.</p>
 <div class="section" id="compiling-and-installing-mychem-on-gnu-linux">
 <h3>Compiling and Installing Mychem on GNU/Linux<a class="headerlink" href="#compiling-and-installing-mychem-on-gnu-linux" title="Permalink to this headline"> </a></h3>
-<p>This section contains the compilation and installation instructions for
-Mychem on GNU/Linux.</p>
+<p>The compilation and installation instructions of the Mychem software
+on GNU/Linux is detailed in the two following parts.</p>
 <div class="section" id="standard-installation-on-gnu-linux">
 <h4>Standard Installation on GNU/Linux<a class="headerlink" href="#standard-installation-on-gnu-linux" title="Permalink to this headline"> </a></h4>
-<p>This section describes the standard way to compile and install Mychem on
+<p>This part describes the standard way to compile and install Mychem on
 GNU/Linux. You have to check that the header files for the MySQL library
 and the Open Babel library are installed on your workstation. If they
 are not installed, the CMake software will raise an error when

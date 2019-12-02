@@ -16,31 +16,6 @@ install Mychem.
 -  :ref:`Mychem API` - tells how to build the API documentation of
    Mychem.
 
-How to Obtain Mychem
---------------------
-
-At this time, Mychem is only available as a source package that you need
-to compile. You can also get the last snapshot directly from the GIT
-repository (take care, this version can be unstable). It is planned to
-release binaries in a future release of Mychem.
-
-Source Package
-++++++++++++++
-
-The last source package can be found on the `Project Homepage <http://sourceforge.net/projects/mychem/files/>`_
-hosted by SourceForge.
-
-GIT Repository
-++++++++++++++
-
-The last development version of Mychem can be obtained by cloning the
-`GIT repository <http://github.com/mychem/mychem-code>`_. In case you
-are using a command line interface, follow this step:
-
-.. code-block:: bash
-
-    $ git clone https://github.com/mychem/mychem-code.git
-
 Requirements
 ------------
 
@@ -72,22 +47,48 @@ following programs and libraries.
 
    The software is available from the `Open Babel Home Page <http://openbabel.sourceforge.net/wiki/Main_Page>`_.
 
+How to Obtain Mychem
+--------------------
+
+The stable versions of Mychem are released as a tarball that has to be
+extracted and compiled. The code can also be directly retrieven by
+cloning the mychem-code GIT repository. The following sections
+describe how to proceed.
+
+Source Archive
+++++++++++++++
+
+The last stable version can be found on the `Mychem GitHub release page
+<https://github.com/mychem/mychem-code/releases>`_. It is provided as
+ZIP and compressed TAR archives. The last stable version is v1.0.0.
+
+GIT Repository
+++++++++++++++
+
+The last development version of Mychem can be obtained by cloning the
+`mychem-code GIT repository <http://github.com/mychem/mychem-code>`_. In case you
+are using a command line interface, follow this step:
+
+.. code-block:: bash
+
+    $ git clone https://github.com/mychem/mychem-code.git
+
 Compilation and Installation
 ----------------------------
 
-This section describes the compilation of Mychem's source files for
+This section describes the compilation of Mychem's source code for
 GNU/Linux, Mac OS X and Microsoft Windows.
 
 Compiling and Installing Mychem on GNU/Linux
 ++++++++++++++++++++++++++++++++++++++++++++
 
-This section contains the compilation and installation instructions for
-Mychem on GNU/Linux.
+The compilation and installation instructions of the Mychem software
+on GNU/Linux is detailed in the two following parts.
 
 Standard Installation on GNU/Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section describes the standard way to compile and install Mychem on
+This part describes the standard way to compile and install Mychem on
 GNU/Linux. You have to check that the header files for the MySQL library
 and the Open Babel library are installed on your workstation. If they
 are not installed, the CMake software will raise an error when

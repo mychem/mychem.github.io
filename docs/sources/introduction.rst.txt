@@ -16,7 +16,7 @@ fast functions. These functions permit you to search, analyze and
 convert chemical data.
 
 More informations about Mychem are available on the `Mychem
-website <http://mychem.sourceforge.net/>`_.
+website <http://mychem.github.io/>`_.
 
 
 MySQL and MariaDB
