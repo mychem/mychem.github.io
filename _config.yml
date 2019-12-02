@@ -4,3 +4,4 @@ description: The cheminformatics extension for MySQL and MariaDB.
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-minimal
+mychem_version: 1.0.0
