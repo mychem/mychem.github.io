@@ -582,7 +582,7 @@ about the Mychem environment.
    ::
 
        mysql> SELECT INCHI_VERSION();
-               -> 1.02
+               -> 1.04
 
 -  ``MYCHEM_VERSION()``
 
@@ -591,7 +591,7 @@ about the Mychem environment.
    ::
 
        mysql> SELECT MYCHEM_VERSION();
-               -> 1.0.0
+               -> 2.0.0
 
 -  ``OPENBABEL_VERSION()``
 

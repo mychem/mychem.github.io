@@ -39,15 +39,13 @@ To fix this problem, the following lines must be added to the
 
 ::
 
-    /usr/lib/openbabel/* m,
-    /usr/lib/openbabel/2.3.2/* m,
-    /usr/share/openbabel/* r,
-    /usr/share/openbabel/2.3.2/* r,
+    /usr/lib/openbabel/** r,
 
-    **Note**
+And reload the AppArmor configuration:
 
-    Replace 2.3.2 by the version of OpenBabel on your system (2.3.0,
-    2.3.1, ...).
+::
+
+   cat /etc/apparmor.d/usr.sbin.mysqld | apparmor_parser -r
 
 Other Errors
 ------------

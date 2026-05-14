@@ -1,26 +1,26 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Installation &#8212; Mychem 1.0.1 documentation</title>
-    <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="static/language_data.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Installation &#8212; Mychem 2.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <link rel="canonical" href="https://mychem.github.io/docs/installation.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Using Mychem" href="using-mychem.html" />
     <link rel="prev" title="Introduction" href="introduction.html" />
    
-  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -30,81 +30,98 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"> </a></h1>
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, we will discuss the steps necessary to compile and
 install Mychem.</p>
 <ul class="simple">
-<li><a class="reference internal" href="#how-to-obtain-mychem"><span class="std std-ref">How to Obtain Mychem</span></a> - mainly concentrates on
-downloading the last stable version of Mychem.</li>
-<li><a class="reference internal" href="#requirements"><span class="std std-ref">Requirements</span></a> - lists the programs and libraries
-which you need installed to successfully compile Mychem.</li>
-<li><a class="reference internal" href="#compilation-and-installation"><span class="std std-ref">Compilation and Installation</span></a> - leads you through
-all the steps of compilation and installation of the application.</li>
-<li><a class="reference internal" href="#mychem-api"><span class="std std-ref">Mychem API</span></a> - tells how to build the API documentation of
-Mychem.</li>
+<li><p><a class="reference internal" href="#how-to-obtain-mychem"><span class="std std-ref">How to Obtain Mychem</span></a> - mainly concentrates on
+downloading the last stable version of Mychem.</p></li>
+<li><p><a class="reference internal" href="#requirements"><span class="std std-ref">Requirements</span></a> - lists the programs and libraries
+which you need installed to successfully compile Mychem.</p></li>
+<li><p><a class="reference internal" href="#compilation-and-installation"><span class="std std-ref">Compilation and Installation</span></a> - leads you through
+all the steps of compilation and installation of the application.</p></li>
+<li><p><a class="reference internal" href="#mychem-api"><span class="std std-ref">Mychem API</span></a> - tells how to build the API documentation of
+Mychem.</p></li>
 </ul>
-<div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"> </a></h2>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>In order to successfully compile and install Mychem, you need the
 following programs and libraries.</p>
 <ul>
-<li><p class="first">C/C++ compiler</p>
-<p>The compilation has been tested successfully with the GNU&nbsp;C Compiler
+<li><p>C/C++ compiler</p>
+<p>The compilation has been tested successfully with the GNU C Compiler
 (GCC).</p>
 </li>
-<li><p class="first">CMake version 2.6.0 or higher.</p>
+<li><p>CMake version 3.10.0 or higher.</p>
 <p>CMake is a multi-platform Makefile generator. It is a Free Software
-and can be downloaded on the <a class="reference external" href="http://www.cmake.org/HTML/Index.html">CMake website</a>.</p>
+and can be downloaded on the <a class="reference external" href="https://cmake.org/">CMake website</a>.</p>
 </li>
-<li><p class="first">MySQL version 4.0 or higher, or MariaDB.</p>
-<p>The MySQL database server is available from the <a class="reference external" href="http://www.mysql.org">MySQL website</a>.
-The MySQL headers are also
-required for the compilation. They are included with the standard MS
-Windows installation of MySQL. For Linux, an additional package has
-to be installed (libmysqlclient-dev).</p>
+<li><p>MySQL or MariaDB version 5.5 or higher.</p>
+<p>The MySQL database server is available from the <a class="reference external" href="https://www.mysql.com/">MySQL website</a>.</p>
 </li>
-<li><p class="first">Open Babel version 2.3.2 or any later version. The compilation of
-Mychem requires also the openbabel header. For MS Windows, they are
-provided with the source package. For Linux, install the
-libopenbabel-dev package.</p>
-<p>The software is available from the <a class="reference external" href="http://openbabel.sourceforge.net/wiki/Main_Page">Open Babel Home Page</a>.</p>
+<li><p>Open Babel version 3.0 or higher</p>
+<p>The software is available from the <a class="reference external" href="https://openbabel.org/">Open Babel website</a>.</p>
 </li>
 </ul>
-</div>
-<div class="section" id="how-to-obtain-mychem">
-<h2>How to Obtain Mychem<a class="headerlink" href="#how-to-obtain-mychem" title="Permalink to this headline"> </a></h2>
+</section>
+<section id="how-to-obtain-mychem">
+<h2>How to Obtain Mychem<a class="headerlink" href="#how-to-obtain-mychem" title="Permalink to this headline">¶</a></h2>
 <p>The stable versions of Mychem are released as a tarball that has to be
 extracted and compiled. The code can also be directly retrieven by
 cloning the mychem-code GIT repository. The following sections
 describe how to proceed.</p>
-<div class="section" id="source-archive">
-<h3>Source Archive<a class="headerlink" href="#source-archive" title="Permalink to this headline"> </a></h3>
+<section id="source-archive">
+<h3>Source Archive<a class="headerlink" href="#source-archive" title="Permalink to this headline">¶</a></h3>
 <p>The last stable version can be found on the <a class="reference external" href="https://github.com/mychem/mychem-code/releases">Mychem GitHub release page</a>. It is provided as
-ZIP and compressed TAR archives. The last stable version is v1.0.0.</p>
-</div>
-<div class="section" id="git-repository">
-<h3>GIT Repository<a class="headerlink" href="#git-repository" title="Permalink to this headline"> </a></h3>
+ZIP and compressed TAR archives. The last stable version is v2.0.0.</p>
+</section>
+<section id="git-repository">
+<h3>GIT Repository<a class="headerlink" href="#git-repository" title="Permalink to this headline">¶</a></h3>
 <p>The last development version of Mychem can be obtained by cloning the
 <a class="reference external" href="http://github.com/mychem/mychem-code">mychem-code GIT repository</a>. In case you
 are using a command line interface, follow this step:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/mychem/mychem-code.git
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="compilation-and-installation">
-<h2>Compilation and Installation<a class="headerlink" href="#compilation-and-installation" title="Permalink to this headline"> </a></h2>
+</section>
+</section>
+<section id="compilation-and-installation">
+<h2>Compilation and Installation<a class="headerlink" href="#compilation-and-installation" title="Permalink to this headline">¶</a></h2>
 <p>This section describes the compilation of Mychem’s source code for
-GNU/Linux, Mac OS X and Microsoft Windows.</p>
-<div class="section" id="compiling-and-installing-mychem-on-gnu-linux">
-<h3>Compiling and Installing Mychem on GNU/Linux<a class="headerlink" href="#compiling-and-installing-mychem-on-gnu-linux" title="Permalink to this headline"> </a></h3>
+GNU/Linux and Mac OS X.</p>
+<section id="compiling-and-installing-mychem-on-gnu-linux">
+<h3>Compiling and Installing Mychem on GNU/Linux<a class="headerlink" href="#compiling-and-installing-mychem-on-gnu-linux" title="Permalink to this headline">¶</a></h3>
 <p>The compilation and installation instructions of the Mychem software
-on GNU/Linux is detailed in the two following parts.</p>
-<div class="section" id="standard-installation-on-gnu-linux">
-<h4>Standard Installation on GNU/Linux<a class="headerlink" href="#standard-installation-on-gnu-linux" title="Permalink to this headline"> </a></h4>
+on GNU/Linux is detailed in the two following parts. The default
+is to use MariaDB server, but Mychem has been successfully tested
+with MySQL.</p>
+<section id="prerequisites">
+<h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h4>
+<p>The following devlopment packages are required for a successful
+compilation on GNU/Linux:</p>
+<ul class="simple">
+<li><p>with Ubuntu or Debian: libopenbabel-dev, libmariadb-dev, libmariadbclient-dev</p></li>
+<li><p>with RedHat and derivatives:
+sudo yum install -y epel-release
+sudo yum update
+sudo yum install -y openbabel-devel mariadb-devel</p></li>
+</ul>
+<p>Each release is automatically tested on the following operating systems
+using gitare automatically tested via
+<a class="reference external" href="https://github.com/features/actions">GitHub Actions</a>:</p>
+<ul class="simple">
+<li><p>Ubuntu 20.04</p></li>
+<li><p>Ubuntu 22.04</p></li>
+<li><p>Ubuntu 24.04</p></li>
+</ul>
+</section>
+<section id="standard-installation-on-gnu-linux">
+<h4>Standard Installation on GNU/Linux<a class="headerlink" href="#standard-installation-on-gnu-linux" title="Permalink to this headline">¶</a></h4>
 <p>This part describes the standard way to compile and install Mychem on
 GNU/Linux. You have to check that the header files for the MySQL library
 and the Open Babel library are installed on your workstation. If they
@@ -112,13 +129,13 @@ are not installed, the CMake software will raise an error when
 generating the Makefile. First, extract the appropriate source package.
 If you are using a command line interface, follow this instructions:</p>
 <ul>
-<li><p class="first">For the tar gzipped archive:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tar -xfzv mychem-1.0.0.tar.gz
+<li><p>For the tar gzipped archive:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ tar -xfzv mychem-2.0.0.tar.gz
 </pre></div>
 </div>
 </li>
-<li><p class="first">For the zip archive:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ unzip mychem-1.0.0.zip
+<li><p>For the zip archive:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ unzip mychem-2.0.0.zip
 </pre></div>
 </div>
 </li>
@@ -128,16 +145,16 @@ directory contains the source, the build is called <em>in source</em>. In other
 cases, it is called <em>out of source</em>. CMake strongly recommends and
 promotes building out of source.</p>
 <ul>
-<li><p class="first">In source build:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> mychem-1.0.0
+<li><p>In source build:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> mychem-2.0.0
 $ cmake .
 $ make
 $ sudo make install
 </pre></div>
 </div>
 </li>
-<li><p class="first">Build out-of-source (recommended):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> mychem-1.0.0
+<li><p>Build out-of-source (recommended):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> mychem-2.0.0
 $ mkdir build
 $ <span class="nb">cd</span> build
 $ cmake ..
@@ -164,9 +181,9 @@ following command:</p>
 <p>On Mac OS X and Windows, another SQL file is used instead of the
 <code class="docutils literal notranslate"><span class="pre">src/mychemdb.sql</span></code> file. The name of this file is detailed in the
 corresponding OS section.</p>
-</div>
-<div class="section" id="customized-installation">
-<h4>Customized Installation<a class="headerlink" href="#customized-installation" title="Permalink to this headline"> </a></h4>
+</section>
+<section id="customized-installation">
+<h4>Customized Installation<a class="headerlink" href="#customized-installation" title="Permalink to this headline">¶</a></h4>
 <p>You can customized the build and installation process by modifying CMake
 arguments. For example, if you want to change the path of the
 installation directory:</p>
@@ -179,21 +196,21 @@ following option for the <code class="docutils literal notranslate"><span class=
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make <span class="nv">VERBOSE</span><span class="o">=</span><span class="m">1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="ubuntu-specifities">
-<h4>Ubuntu specifities<a class="headerlink" href="#ubuntu-specifities" title="Permalink to this headline"> </a></h4>
+</section>
+<section id="ubuntu-specifities">
+<h4>Ubuntu specifities<a class="headerlink" href="#ubuntu-specifities" title="Permalink to this headline">¶</a></h4>
 <p>AppArmor is a Linux Security Module and is installed by default on
 Ubuntu. It permits to confine individual programs to a set of listed
 files. To configure correctly AppArmor for Mychem, please follow the
 instructions detailed in the <a class="reference internal" href="troubleshooting.html#apparmor"><span class="std std-ref">AppArmor</span></a> section.</p>
-</div>
-<div class="section" id="testing-the-installation">
-<h4>Testing the installation<a class="headerlink" href="#testing-the-installation" title="Permalink to this headline"> </a></h4>
+</section>
+<section id="testing-the-installation">
+<h4>Testing the installation<a class="headerlink" href="#testing-the-installation" title="Permalink to this headline">¶</a></h4>
 <p>Since v0.5, Mychem includes a test suite. To build and use these
 programs, you have to set the MySQL connection settings and run the
 tests. The following example builds Mychem out-of-source and enables
 testing.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> mychem-1.0.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> mychem-2.0.0
 $ mkdir build
 $ <span class="nb">cd</span> build
 $ cmake -DMY_HOST<span class="o">=</span>localhost -DMY_USER<span class="o">=</span>user -DMY_PASSWD<span class="o">=</span>passwd ..
@@ -248,12 +265,12 @@ following results:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">LastTest.log</span></code> file contains more details about the test results.
 It can be found in the <code class="docutils literal notranslate"><span class="pre">/path/to/mychem/build/Testing/Temporary</span></code>
 directory.</p>
-</div>
-<div class="section" id="installation-troubleshooting">
-<h4>Installation Troubleshooting<a class="headerlink" href="#installation-troubleshooting" title="Permalink to this headline"> </a></h4>
+</section>
+<section id="installation-troubleshooting">
+<h4>Installation Troubleshooting<a class="headerlink" href="#installation-troubleshooting" title="Permalink to this headline">¶</a></h4>
 <p>Building your application can raise some errors:</p>
 <ul>
-<li><p class="first">If CMake returns the following error:</p>
+<li><p>If CMake returns the following error:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CMake</span> <span class="n">Error</span><span class="p">:</span> <span class="n">This</span> <span class="n">project</span> <span class="n">requires</span> <span class="n">some</span> <span class="n">variables</span>
 <span class="n">to</span> <span class="n">be</span> <span class="nb">set</span><span class="p">,</span> <span class="ow">and</span> <span class="n">cmake</span> <span class="n">can</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">them</span><span class="o">.</span> <span class="n">Please</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">following</span>
 <span class="n">variables</span><span class="p">:</span> <span class="n">OPENBABEL2_INCLUDE_DIR</span> <span class="p">(</span><span class="n">ADVANCED</span><span class="p">)</span> <span class="n">OPENBABEL2_LIBRARIES</span>
@@ -262,47 +279,47 @@ directory.</p>
 </div>
 <p>It means that CMake did not find Open Babel. If you know where Open
 Babel is installed on your system, you can tell it to CMake with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /path/to/mychem-1.0.0/build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /path/to/mychem-2.0.0/build
 $ cmake -DOPENBABEL2_INCLUDE_DIR<span class="o">=</span>/path/to/openbabel/include <span class="se">\</span>
 -DOPENBABEL2_LIBRARIES<span class="o">=</span>/path/to/library ..
 </pre></div>
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="installing-mychem-on-mac-os-x">
-<h3>Installing Mychem on Mac OS X<a class="headerlink" href="#installing-mychem-on-mac-os-x" title="Permalink to this headline"> </a></h3>
+</section>
+</section>
+<section id="installing-mychem-on-mac-os-x">
+<h3>Installing Mychem on Mac OS X<a class="headerlink" href="#installing-mychem-on-mac-os-x" title="Permalink to this headline">¶</a></h3>
 <p>The installation on Mac OS X differs slightly from an installation on
 GNU/linux. First, you have to set some parameters for CMake. The
 following list shows common values used when compiling Mychem on Mac OS
 X. Note that these values may differ on your system.</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="28%" />
-<col width="72%" />
+<col style="width: 28%" />
+<col style="width: 72%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">CMake Variable</th>
-<th class="head">Value</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>CMake Variable</p></th>
+<th class="head"><p>Value</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>OPENBABEL2_INCLUDE_DIR</td>
-<td><code class="docutils literal notranslate"><span class="pre">/usr/local/include/openbabel-2.0</span></code></td>
+<tbody>
+<tr class="row-even"><td><p>OPENBABEL2_INCLUDE_DIR</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/usr/local/include/openbabel-2.0</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>OPENBABEL2_LIBRARIES</td>
-<td><code class="docutils literal notranslate"><span class="pre">/usr/local/lib/libopenbabel.dylib</span></code></td>
+<tr class="row-odd"><td><p>OPENBABEL2_LIBRARIES</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/usr/local/lib/libopenbabel.dylib</span></code></p></td>
 </tr>
-<tr class="row-even"><td rowspan="2">MYSQL_INCLUDE_DIR</td>
-<td><code class="docutils literal notranslate"><span class="pre">/Library/MySQL/include/mysql</span></code></td>
+<tr class="row-even"><td rowspan="2"><p>MYSQL_INCLUDE_DIR</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/Library/MySQL/include/mysql</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">/Applications/MAMP/Library/include/mysql</span></code></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/Applications/MAMP/Library/include/mysql</span></code></p></td>
 </tr>
-<tr class="row-even"><td rowspan="2">MYSQL_LIBRARIES</td>
-<td><code class="docutils literal notranslate"><span class="pre">/Library/MySQL/lib/mysql/libmysqlclient.dylib</span></code></td>
+<tr class="row-even"><td rowspan="2"><p>MYSQL_LIBRARIES</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/Library/MySQL/lib/mysql/libmysqlclient.dylib</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">/Applications/MAMP/Library/lib/mysql/libmysqlclient.dylib</span></code></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/Applications/MAMP/Library/lib/mysql/libmysqlclient.dylib</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -326,12 +343,12 @@ information:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ otool -L libmychem.dylib
 libmychem.dylib:
         /usr/local/lib/libmychem.0.dylib <span class="o">(</span>compatibility version <span class="m">0</span>.0.0, current
-        version <span class="m">1</span>.0.0<span class="o">)</span>
+        version <span class="m">2</span>.0.0<span class="o">)</span>
         /usr/local/lib/libopenbabel.4.dylib <span class="o">(</span>compatibility version <span class="m">4</span>.0.0,
         current version <span class="m">4</span>.0.1<span class="o">)</span>
         libmysqlclient.18.dylib <span class="o">(</span>compatibility version <span class="m">18</span>.0.0, current version
         <span class="m">18</span>.0.0<span class="o">)</span>
-        /usr/lib/libSystem.B.dylib <span class="o">(</span>compatibility version <span class="m">1</span>.0.0, current
+        /usr/lib/libSystem.B.dylib <span class="o">(</span>compatibility version <span class="m">2</span>.0.0, current
         version <span class="m">159</span>.1.0<span class="o">)</span>
         /usr/lib/libstdc++.6.dylib <span class="o">(</span>compatibility version <span class="m">7</span>.0.0, current
         version <span class="m">52</span>.0.0<span class="o">)</span>
@@ -343,102 +360,28 @@ $ sudo install_name_tool -change libmysqlclient.18.dylib <span class="se">\</spa
  libmychem.dylib
 </pre></div>
 </div>
-</div>
-<div class="section" id="installing-mychem-on-microsoft-windows">
-<h3>Installing Mychem on Microsoft Windows<a class="headerlink" href="#installing-mychem-on-microsoft-windows" title="Permalink to this headline"> </a></h3>
-<p>This section describes contains the installation of Mychem on Microsoft
-Windows.</p>
-<div class="section" id="installation-using-microsoft-visual-studio-express-2005">
-<h4>Installation using Microsoft Visual Studio Express 2005<a class="headerlink" href="#installation-using-microsoft-visual-studio-express-2005" title="Permalink to this headline"> </a></h4>
-<p>You can compile Mychem with Microsoft Visual C++ 2005 Express Edition (
-MSVC++ ). This software can be downloaded from the <a class="reference external" href="http://www.microsoft.com/express/2005/">Microsoft MSDN
-Website</a>. To complete the
-Microsoft Visual C++ software, install the SDK Platform. The instruction
-are given in the following
-<a class="reference external" href="http://msdn2.microsoft.com/en-us/library/ms235626(VS.80).aspx">article</a>.
-The MySQL package for Windows contains all required libraries and
-include files for building Mychem. However, Open Babel does not provide
-such a package. You have to compile Open Babel. It can easily be done
-with MSVC++ and by following the instructions detailed on the <a class="reference external" href="http://openbabel.org/wiki/Install_%28MSVC%29">Open
-Babel Website</a>. The
-following libraries are necessary for the build of Open Babel. They can
-be downloaded from the <a class="reference external" href="http://www.zlatkovic.com/pub/libxml">Maintainer’s Home
-Page</a> of the libxml2 Windows
-port.</p>
-<ul class="simple">
-<li>iconv</li>
-<li>libxml2</li>
-<li>zlib</li>
-</ul>
-<p>Once your compilation environment is ready, you can generate the MSVC++
-project file with CMake. Launch the CMake GUI and set up the source code
-directory and the build directory for the binaries.</p>
-<img alt="CMake screenshot 1" src="images/cmake1.png" />
-<p>Then, click on Configure. A window will appear to let you select what
-build system you want CMake to generate files for. Choose Visual Studio
-8 2005 and click on Ok. After some processing, CMake will raise an error
-window, telling you that some variables are not founded. You will have
-to set it manually. Press twice the Ok button. Click on the Show
-Advanced Values checkbox to display the full list of parameters. Find
-the lines with OPENBABEL2_INCLUDE_DIR, OPENBABEL2_LIBRARIES,
-MYSQL_INCUDE_DIR, MYSQL_LIBRARIES values. These lines are at the end
-of the list.</p>
-<img alt="CMake screenshot 2" src="images/cmake2.png" />
-<p>You have to set OPENBABEL2_INCLUDE_DIR to the directory <code class="docutils literal notranslate"><span class="pre">include</span></code>
-contained in the Open Babel source directory (i.e.,
-<code class="docutils literal notranslate"><span class="pre">C:/path/to/openbabel/include</span></code>) and OPENBABEL2_LIBRARIES to the file
-named <code class="docutils literal notranslate"><span class="pre">OpenBabelDLLD.lib</span></code> (the library should be located in the
-<code class="docutils literal notranslate"><span class="pre">C:/path/to/openbabel/windows-vc2005/OpenBabelDLL/Debug</span></code> directory).</p>
-<p>The MYSQL_INCLUDE_DIR and MYSQL_LIBRARIES parameters should be
-respectively set to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\MySQL\MySQL</span> <span class="pre">Server</span> <span class="pre">X.Y\include</span></code> and
-<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\MySQL\MySQL</span> <span class="pre">Server</span> <span class="pre">X.Y\opt\libmysql.lib</span></code>, where X.Y is the version of MySQL.</p>
-<p>Once the values are set, click on Configure and then on Ok. CMake
-generates the MSVC++ project file (<code class="docutils literal notranslate"><span class="pre">mychem.sln</span></code>) and exit.</p>
-<img alt="CMake screenshot 3" src="images/cmake3.png" />
-<p>Once the project file is generated, open it with MSVC++ . The
-<code class="docutils literal notranslate"><span class="pre">mychem.sln</span></code> project file should be located at
-<code class="docutils literal notranslate"><span class="pre">C:/path/to/mychem/build/</span></code>. Several modules are available for
-building, however, only <em>mychem-lib</em> is required:</p>
-<ul class="simple">
-<li>mychem-lib</li>
-<li>conversion_test</li>
-<li>helper_test</li>
-<li>modification_test</li>
-<li>molmatch_test</li>
-<li>property_test</li>
-</ul>
-<p>If you build the <em>debug</em> version of Mychem, the Mychem DLL file is
-located in the <code class="docutils literal notranslate"><span class="pre">C:/path/to/mychem/build/dir/src/debug</span></code> directory and
-is named <code class="docutils literal notranslate"><span class="pre">mychem.dll</span></code>. You have to copy this DLL file into the MySQL
-<code class="docutils literal notranslate"><span class="pre">bin</span></code> directory. Then copy the
-<code class="docutils literal notranslate"><span class="pre">C:/path/to/openbabel/windows-vc2005/OpenBabelDLL/Debug/OpenBabelDLLD.dll</span></code>
-DLL file and all DLL files founded into the
-<code class="docutils literal notranslate"><span class="pre">openbabel-2.400/windows-vc2005</span></code> directory to the MySQL <code class="docutils literal notranslate"><span class="pre">bin</span></code>
-directory.</p>
-<p>At last, restart MySQL and run the win32 SQL script
-<code class="docutils literal notranslate"><span class="pre">/path/to/mychem/src/mychemdb_win32.sql</span></code>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="mychem-api">
-<h2>Mychem API<a class="headerlink" href="#mychem-api" title="Permalink to this headline"> </a></h2>
-<p>API documentation is available on the <a class="reference external" href="http://mychem.sourceforge.net/api/index.html">Mychem
+</section>
+</section>
+<section id="mychem-api">
+<h2>Mychem API<a class="headerlink" href="#mychem-api" title="Permalink to this headline">¶</a></h2>
+<p>API documentation is available on the <a class="reference external" href="http://mychem.github.io/api/index.html">Mychem
 website</a>.</p>
 <p>You can also build the documentation yourself, by using the <a class="reference external" href="http://www.doxygen.org/">Doxygen
 software</a>. To generate this documentation,
 use the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /path/to/mychem-1.0.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /path/to/mychem-2.0.0
 $ mkdir api
 $ doxygen Doxyfile
 </pre></div>
 </div>
 <p>The API documentation can be read using a web browser at the following
-url: <code class="docutils literal notranslate"><span class="pre">file:///path/to/mychem-1.0.0/api/html/index.html</span></code></p>
-</div>
-</div>
+url: <code class="docutils literal notranslate"><span class="pre">file:///path/to/mychem-2.0.0/api/html/index.html</span></code></p>
+</section>
+</section>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -452,17 +395,15 @@ url: <code class="docutils literal notranslate"><span class="pre">file:///path/t
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -471,11 +412,11 @@ url: <code class="docutils literal notranslate"><span class="pre">file:///path/t
       &copy;2019, Jérôme Pansanel.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="sources/installation.rst.txt"
+      <a href="_sources/installation.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

@@ -1,26 +1,26 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Using Mychem &#8212; Mychem 1.0.1 documentation</title>
-    <link rel="stylesheet" href="static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="static/language_data.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Using Mychem &#8212; Mychem 2.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <link rel="canonical" href="https://mychem.github.io/docs/using-mychem.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Command Reference" href="command-reference.html" />
     <link rel="prev" title="Installation" href="installation.html" />
    
-  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -30,21 +30,23 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
-  <div class="section" id="using-mychem">
-<h1>Using Mychem<a class="headerlink" href="#using-mychem" title="Permalink to this headline"> </a></h1>
+  <section id="using-mychem">
+<h1>Using Mychem<a class="headerlink" href="#using-mychem" title="Permalink to this headline">¶</a></h1>
 <p>This chapter provides a short tutorial about the usage of Mychem. It
 will present you a simple way to create a chemical database with Mychem
 and how to use some functions. More details about each function used in
 this tutorial are available in the <a class="reference internal" href="command-reference.html#command-reference"><span class="std std-ref">Command Reference</span></a>.</p>
-<div class="section" id="the-database">
-<h2>The Database<a class="headerlink" href="#the-database" title="Permalink to this headline"> </a></h2>
+<section id="the-database">
+<h2>The Database<a class="headerlink" href="#the-database" title="Permalink to this headline">¶</a></h2>
 <p>A chemical database is composed of one or several tables. The examples
 presented in this chapter are using a set of four tables, with the
 following structure:</p>
 <ul>
-<li><p class="first"><em>compounds</em> - a table containing an unique id for each molecule and
+<li><p><em>compounds</em> - a table containing an unique id for each molecule and
 its name.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">+---------+------------------+------+-----+---------------------+----------------+</span>
 <span class="go">| Field   | Type             | Null | Key | Default             | Extra          |</span>
@@ -56,7 +58,7 @@ its name.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><em>1D_structures</em> - a table containing an unique reference to the
+<li><p><em>1D_structures</em> - a table containing an unique reference to the
 <em>compounds</em> table and several types of 1D molecular descriptors
 (InChI code and SMILES).</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">+-------------+------------------+------+-----+---------+-------+</span>
@@ -69,7 +71,7 @@ its name.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><em>3D_structures</em> - a table containing an unique reference to the
+<li><p><em>3D_structures</em> - a table containing an unique reference to the
 <em>compounds</em> table and the 3D structure in MDL Molfile format.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">+-------------+------------------+------+-----+---------+-------+</span>
 <span class="go">| Field       | Type             | Null | Key | Default | Extra |</span>
@@ -80,7 +82,7 @@ its name.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><em>bin_structures</em> - a table containing an unique reference to the
+<li><p><em>bin_structures</em> - a table containing an unique reference to the
 <em>compounds</em> table and several types of binary descriptors
 (fingerprints and serialized OBMol object).</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">+--------------+------------------+------+-----+---------+-------+</span>
@@ -98,14 +100,14 @@ its name.</p>
 mychemdb_manager, a Python script released with Mychem. It can be found
 in the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> directory. Its usage is detailed in the <a class="reference internal" href="mychem-manager.html#chemical-database-manager"><span class="std std-ref">Chemical Database Manager</span></a>
 chapter.</p>
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"> </a></h2>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>Once the database and the tables are created, you can use many chemical
 functions. Here is a (very) short overview of the possibilities. The
 dataset used for this example can be freely obtained from the <a class="reference external" href="http://chemfiles.sourceforge.net">Chemical Structures Project</a>.</p>
-<div class="section" id="calculate-the-molecular-weight">
-<h3>Calculate the Molecular Weight<a class="headerlink" href="#calculate-the-molecular-weight" title="Permalink to this headline"> </a></h3>
+<section id="calculate-the-molecular-weight">
+<h3>Calculate the Molecular Weight<a class="headerlink" href="#calculate-the-molecular-weight" title="Permalink to this headline">¶</a></h3>
 <p>The computation of the molecular weight of a molecule is performed by
 the <code class="docutils literal notranslate"><span class="pre">MOLWEIGHT</span></code> function. In the following example, the molecular
 weight of the amino acid <em>glycine</em> is calculated.</p>
@@ -116,9 +118,9 @@ weight of the amino acid <em>glycine</em> is calculated.</p>
         -&gt; 75.066600
 </pre></div>
 </div>
-</div>
-<div class="section" id="search-a-substructure">
-<h3>Search a Substructure<a class="headerlink" href="#search-a-substructure" title="Permalink to this headline"> </a></h3>
+</section>
+<section id="search-a-substructure">
+<h3>Search a Substructure<a class="headerlink" href="#search-a-substructure" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">MATCH_SUBSTRUCTURE</span></code> function permits to find a substructure and
 belong to the <a class="reference internal" href="command-reference.html#molmatch-commands"><span class="std std-ref">Molmatch Commands</span></a> function group. In this example,
 we are looking for compounds containing a phenol group:</p>
@@ -144,12 +146,13 @@ we are looking for compounds containing a phenol group:</p>
 10 rows in set (0.02 sec)
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -163,17 +166,15 @@ we are looking for compounds containing a phenol group:</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -182,11 +183,11 @@ we are looking for compounds containing a phenol group:</p>
       &copy;2019, Jérôme Pansanel.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="sources/using-mychem.rst.txt"
+      <a href="_sources/using-mychem.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

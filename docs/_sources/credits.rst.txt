@@ -27,6 +27,10 @@ These are developers that are involved in Mychem:
 
    For comments and bug fixes
 
+-  Andrius Merkys andrius.merkys@gmail.com
+
+   Developer and tester
+
 Contributors
 ++++++++++++
 
@@ -52,10 +56,14 @@ Contributors to Mychem are listed here:
 
    For debugging and tests on Mac OS X.
 
+-  Paulo Maia
+
+   For debugging CMake files
+
 Copyright
 ---------
 
-Mychem is Copyright © 2009-2019 CNRS and University of Strasbourg
+Mychem is Copyright © 2009-2025 CNRS and University of Strasbourg
 
 License
 -------

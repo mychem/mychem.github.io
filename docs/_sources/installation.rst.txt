@@ -16,6 +16,7 @@ install Mychem.
 -  :ref:`Mychem API` - tells how to build the API documentation of
    Mychem.
 
+
 Requirements
 ------------
 
@@ -27,25 +28,19 @@ following programs and libraries.
    The compilation has been tested successfully with the GNU C Compiler
    (GCC).
 
--  CMake version 2.6.0 or higher.
+-  CMake version 3.10.0 or higher.
 
    CMake is a multi-platform Makefile generator. It is a Free Software
-   and can be downloaded on the `CMake website <http://www.cmake.org/HTML/Index.html>`_.
+   and can be downloaded on the `CMake website <https://cmake.org/>`_.
 
--  MySQL version 4.0 or higher, or MariaDB.
+-  MySQL or MariaDB version 5.5 or higher.
 
-   The MySQL database server is available from the `MySQL website <http://www.mysql.org>`_.
-   The MySQL headers are also
-   required for the compilation. They are included with the standard MS
-   Windows installation of MySQL. For Linux, an additional package has
-   to be installed (libmysqlclient-dev).
+   The MySQL database server is available from the `MySQL website <https://www.mysql.com/>`_.
 
--  Open Babel version 2.3.2 or any later version. The compilation of
-   Mychem requires also the openbabel header. For MS Windows, they are
-   provided with the source package. For Linux, install the
-   libopenbabel-dev package.
+-  Open Babel version 3.0 or higher
 
-   The software is available from the `Open Babel Home Page <http://openbabel.sourceforge.net/wiki/Main_Page>`_.
+   The software is available from the `Open Babel website <https://openbabel.org/>`_.
+
 
 How to Obtain Mychem
 --------------------
@@ -55,12 +50,14 @@ extracted and compiled. The code can also be directly retrieven by
 cloning the mychem-code GIT repository. The following sections
 describe how to proceed.
 
+
 Source Archive
 ++++++++++++++
 
 The last stable version can be found on the `Mychem GitHub release page
 <https://github.com/mychem/mychem-code/releases>`_. It is provided as
-ZIP and compressed TAR archives. The last stable version is v1.0.0.
+ZIP and compressed TAR archives. The last stable version is v2.0.0.
+
 
 GIT Repository
 ++++++++++++++
@@ -73,17 +70,46 @@ are using a command line interface, follow this step:
 
     $ git clone https://github.com/mychem/mychem-code.git
 
+
 Compilation and Installation
 ----------------------------
 
 This section describes the compilation of Mychem's source code for
-GNU/Linux, Mac OS X and Microsoft Windows.
+GNU/Linux and Mac OS X.
+
 
 Compiling and Installing Mychem on GNU/Linux
 ++++++++++++++++++++++++++++++++++++++++++++
 
 The compilation and installation instructions of the Mychem software
-on GNU/Linux is detailed in the two following parts.
+on GNU/Linux is detailed in the two following parts. The default
+is to use MariaDB server, but Mychem has been successfully tested
+with MySQL.
+
+
+Prerequisites
+~~~~~~~~~~~~~
+
+The following devlopment packages are required for a successful
+compilation on GNU/Linux:
+
+* with Ubuntu or Debian: libopenbabel-dev, libmariadb-dev, libmariadbclient-dev
+
+* with RedHat and derivatives:
+  sudo yum install -y epel-release
+  sudo yum update
+  sudo yum install -y openbabel-devel mariadb-devel
+
+Each release is automatically tested on the following operating systems
+using gitare automatically tested via
+`GitHub Actions <https://github.com/features/actions>`_:
+
+* Ubuntu 20.04
+
+* Ubuntu 22.04
+
+* Ubuntu 24.04
+
 
 Standard Installation on GNU/Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,13 +125,13 @@ If you are using a command line interface, follow this instructions:
 
    .. code-block:: bash
 
-       $ tar -xfzv mychem-1.0.0.tar.gz
+       $ tar -xfzv mychem-2.0.0.tar.gz
 
 -  For the zip archive:
 
    .. code-block:: bash
 
-       $ unzip mychem-1.0.0.zip
+       $ unzip mychem-2.0.0.zip
 
 CMake can build the libraries and executables into any directory. If the
 directory contains the source, the build is called *in source*. In other
@@ -117,7 +143,7 @@ promotes building out of source.
    .. code-block:: bash
 
 
-       $ cd mychem-1.0.0
+       $ cd mychem-2.0.0
        $ cmake .
        $ make
        $ sudo make install
@@ -126,7 +152,7 @@ promotes building out of source.
 
    .. code-block:: bash
 
-       $ cd mychem-1.0.0
+       $ cd mychem-2.0.0
        $ mkdir build
        $ cd build
        $ cmake ..
@@ -151,11 +177,13 @@ following command:
 
     $ mysql -u user -p < src/mychemdb.sql
 
+
 **Note**
 
 On Mac OS X and Windows, another SQL file is used instead of the
 ``src/mychemdb.sql`` file. The name of this file is detailed in the
 corresponding OS section.
+
 
 Customized Installation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,6 +204,7 @@ following option for the ``make`` command:
 
     $ make VERBOSE=1
 
+
 Ubuntu specifities
 ~~~~~~~~~~~~~~~~~~
 
@@ -183,6 +212,7 @@ AppArmor is a Linux Security Module and is installed by default on
 Ubuntu. It permits to confine individual programs to a set of listed
 files. To configure correctly AppArmor for Mychem, please follow the
 instructions detailed in the :ref:`AppArmor` section.
+
 
 Testing the installation
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -194,7 +224,7 @@ testing.
 
 .. code-block:: bash
 
-    $ cd mychem-1.0.0
+    $ cd mychem-2.0.0
     $ mkdir build
     $ cd build
     $ cmake -DMY_HOST=localhost -DMY_USER=user -DMY_PASSWD=passwd ..
@@ -258,6 +288,7 @@ The ``LastTest.log`` file contains more details about the test results.
 It can be found in the ``/path/to/mychem/build/Testing/Temporary``
 directory.
 
+
 Installation Troubleshooting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -277,9 +308,10 @@ Building your application can raise some errors:
 
    .. code-block:: bash
 
-       $ cd /path/to/mychem-1.0.0/build
+       $ cd /path/to/mychem-2.0.0/build
        $ cmake -DOPENBABEL2_INCLUDE_DIR=/path/to/openbabel/include \
        -DOPENBABEL2_LIBRARIES=/path/to/library ..
+
 
 Installing Mychem on Mac OS X
 +++++++++++++++++++++++++++++
@@ -332,12 +364,12 @@ information:
     $ otool -L libmychem.dylib
     libmychem.dylib:
             /usr/local/lib/libmychem.0.dylib (compatibility version 0.0.0, current
-            version 1.0.0)
+            version 2.0.0)
             /usr/local/lib/libopenbabel.4.dylib (compatibility version 4.0.0,
             current version 4.0.1)
             libmysqlclient.18.dylib (compatibility version 18.0.0, current version
             18.0.0)
-            /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current
+            /usr/lib/libSystem.B.dylib (compatibility version 2.0.0, current
             version 159.1.0)
             /usr/lib/libstdc++.6.dylib (compatibility version 7.0.0, current
             version 52.0.0)
@@ -348,107 +380,12 @@ information:
      /usr/local/mysql-5.5.24-osx10.6-x86_64/lib/libmysqlclient.18.dylib \
      libmychem.dylib
 
-Installing Mychem on Microsoft Windows
-++++++++++++++++++++++++++++++++++++++
-
-This section describes contains the installation of Mychem on Microsoft
-Windows.
-
-Installation using Microsoft Visual Studio Express 2005
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can compile Mychem with Microsoft Visual C++ 2005 Express Edition (
-MSVC++ ). This software can be downloaded from the `Microsoft MSDN
-Website <http://www.microsoft.com/express/2005/>`_. To complete the
-Microsoft Visual C++ software, install the SDK Platform. The instruction
-are given in the following
-`article <http://msdn2.microsoft.com/en-us/library/ms235626(VS.80).aspx>`_.
-The MySQL package for Windows contains all required libraries and
-include files for building Mychem. However, Open Babel does not provide
-such a package. You have to compile Open Babel. It can easily be done
-with MSVC++ and by following the instructions detailed on the `Open
-Babel Website <http://openbabel.org/wiki/Install_%28MSVC%29>`_. The
-following libraries are necessary for the build of Open Babel. They can
-be downloaded from the `Maintainer's Home
-Page <http://www.zlatkovic.com/pub/libxml>`_ of the libxml2 Windows
-port.
-
--  iconv
-
--  libxml2
-
--  zlib
-
-Once your compilation environment is ready, you can generate the MSVC++
-project file with CMake. Launch the CMake GUI and set up the source code
-directory and the build directory for the binaries.
-
-.. image:: images/cmake1.png
-   :alt: CMake screenshot 1
-
-Then, click on Configure. A window will appear to let you select what
-build system you want CMake to generate files for. Choose Visual Studio
-8 2005 and click on Ok. After some processing, CMake will raise an error
-window, telling you that some variables are not founded. You will have
-to set it manually. Press twice the Ok button. Click on the Show
-Advanced Values checkbox to display the full list of parameters. Find
-the lines with OPENBABEL2_INCLUDE_DIR, OPENBABEL2_LIBRARIES,
-MYSQL_INCUDE_DIR, MYSQL_LIBRARIES values. These lines are at the end
-of the list.
-
-.. image:: images/cmake2.png
-   :alt: CMake screenshot 2
-
-You have to set OPENBABEL2_INCLUDE_DIR to the directory ``include``
-contained in the Open Babel source directory (i.e.,
-``C:/path/to/openbabel/include``) and OPENBABEL2_LIBRARIES to the file
-named ``OpenBabelDLLD.lib`` (the library should be located in the
-``C:/path/to/openbabel/windows-vc2005/OpenBabelDLL/Debug`` directory).
-
-The MYSQL_INCLUDE_DIR and MYSQL_LIBRARIES parameters should be
-respectively set to ``C:\Program Files\MySQL\MySQL Server X.Y\include`` and
-``C:\Program Files\MySQL\MySQL Server X.Y\opt\libmysql.lib``, where X.Y is the version of MySQL.
-
-Once the values are set, click on Configure and then on Ok. CMake
-generates the MSVC++ project file (``mychem.sln``) and exit.
-
-.. image:: images/cmake3.png
-   :alt: CMake screenshot 3 
-
-Once the project file is generated, open it with MSVC++ . The
-``mychem.sln`` project file should be located at
-``C:/path/to/mychem/build/``. Several modules are available for
-building, however, only *mychem-lib* is required:
-
--  mychem-lib
-
--  conversion_test
-
--  helper_test
-
--  modification_test
-
--  molmatch_test
-
--  property_test
-
-If you build the *debug* version of Mychem, the Mychem DLL file is
-located in the ``C:/path/to/mychem/build/dir/src/debug`` directory and
-is named ``mychem.dll``. You have to copy this DLL file into the MySQL
-``bin`` directory. Then copy the
-``C:/path/to/openbabel/windows-vc2005/OpenBabelDLL/Debug/OpenBabelDLLD.dll``
-DLL file and all DLL files founded into the
-``openbabel-2.400/windows-vc2005`` directory to the MySQL ``bin``
-directory.
-
-At last, restart MySQL and run the win32 SQL script
-``/path/to/mychem/src/mychemdb_win32.sql``.
 
 Mychem API
 ----------
 
 API documentation is available on the `Mychem
-website <http://mychem.sourceforge.net/api/index.html>`_.
+website <http://mychem.github.io/api/index.html>`_.
 
 You can also build the documentation yourself, by using the `Doxygen
 software <http://www.doxygen.org/>`_. To generate this documentation,
@@ -456,11 +393,10 @@ use the following commands:
 
 .. code-block:: bash
 
-    $ cd /path/to/mychem-1.0.0
+    $ cd /path/to/mychem-2.0.0
     $ mkdir api
     $ doxygen Doxyfile
 
 The API documentation can be read using a web browser at the following
-url: ``file:///path/to/mychem-1.0.0/api/html/index.html``
-
+url: ``file:///path/to/mychem-2.0.0/api/html/index.html``
 
